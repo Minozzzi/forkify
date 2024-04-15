@@ -43,6 +43,7 @@
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "7.2.0",
     "@typescript-eslint/parser": "7.2.0",
+    "autoprefixer": "^10.4.19",
     "commitlint": "^19.2.2",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -54,7 +55,9 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "lint-staged": "^15.2.2",
+    "postcss": "^8.4.38",
     "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.3",
     "typescript": "~5.4.2"
   }
 }
