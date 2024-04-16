@@ -42,6 +42,30 @@
       "kind": 171,
       "methods": [],
       "extends": ["VariantProps"]
+    },
+    {
+      "name": "CardProps",
+      "id": "interface-CardProps-19c47645f72153b1895cf67b6e25a3bcea085a42acf2952ae5ed8463f864fc9086e90af7dce1f96338ab8b35a8fa6b09b5b067c8762ad481fa34501ce8174570",
+      "file": "src/app/shared/components/card/card.interface.ts",
+      "deprecated": false,
+      "deprecationMessage": "",
+      "type": "interface",
+      "sourceCode": "type Item = {\n  imageUrl: string\n  title: string\n  description: string\n}\n\nexport interface CardProps {\n  items: Item[]\n}\n",
+      "properties": [
+        {
+          "name": "items",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Item[]",
+          "optional": false,
+          "description": "",
+          "line": 8
+        }
+      ],
+      "indexSignatures": [],
+      "kind": 171,
+      "methods": [],
+      "extends": []
     }
   ],
   "injectables": [],
@@ -170,6 +194,55 @@
       "templateData": "<button\n  [className]=\"className\"\n  [type]=\"buttonProps?.type\"\n  [disabled]=\"buttonProps?.disabled\"\n  onclick=\"onClick()\"\n>\n  <ng-content></ng-content>\n</button>\n"
     },
     {
+      "name": "CardComponent",
+      "id": "component-CardComponent-e767105385295abc9a2849a718ba2c36c152a1853c6d84ef6b6130f8e99500294a549ec45154af43f89a998f77643eef54afcf3cba5f589443ec8f38d94f37b2",
+      "file": "src/app/shared/components/card/card.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-card",
+      "styleUrls": [],
+      "styles": [],
+      "templateUrl": ["./card.component.html"],
+      "viewProviders": [],
+      "hostDirectives": [],
+      "inputsClass": [
+        {
+          "name": "cardProps",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "line": 12,
+          "type": "CardProps",
+          "decorators": []
+        }
+      ],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [],
+      "deprecated": false,
+      "deprecationMessage": "",
+      "hostBindings": [],
+      "hostListeners": [],
+      "standalone": true,
+      "imports": [
+        {
+          "name": "CommonModule",
+          "type": "module"
+        }
+      ],
+      "description": "",
+      "rawdescription": "\n",
+      "type": "component",
+      "sourceCode": "import { CommonModule } from '@angular/common'\nimport { Component, Input } from '@angular/core'\nimport { CardProps } from './card.interface'\n\n@Component({\n  selector: 'app-card',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './card.component.html'\n})\nexport class CardComponent {\n  @Input() cardProps?: CardProps\n}\n",
+      "assetsDirs": [],
+      "styleUrlsData": "",
+      "stylesData": "",
+      "extends": [],
+      "templateData": "<section class=\"flex flex-col\">\n  <div *ngFor=\"let item of cardProps?.items\">\n    <div>\n      <img [src]=\"item.imageUrl\" alt=\"Imagem do alimento gerado pela receita\" />\n      <div>\n        <span>\n          {{ item.title }}\n        </span>\n\n        <span> {{ item.description }}</span>\n      </div>\n    </div>\n  </div>\n</section>\n"
+    },
+    {
       "name": "HeaderComponent",
       "id": "component-HeaderComponent-a058c4ada86eab13a9e789ce3e40d0b6d4ea60235d7556ea0c160d870895bb2ee62a0df87599753e71086d0f76ae8a353009caa6b5a8f7376622ad58b380707a",
       "file": "src/app/shared/components/header/header.component.ts",
@@ -207,7 +280,7 @@
       "styleUrlsData": "",
       "stylesData": "",
       "extends": [],
-      "templateData": "<header class=\"flex justify-start items-center p-5 shadow-100 bg-background\">\n  <img class=\"max-w-40\" src=\"/src/assets/forkify-logo.png\" alt=\"Forkify Logo\" />\n</header>\n"
+      "templateData": "<header class=\"flex justify-start items-center p-5 shadow-100 bg-secondary-100\">\n  <img class=\"max-w-40\" src=\"/src/assets/forkify-logo.png\" alt=\"Forkify Logo\" />\n</header>\n"
     }
   ],
   "modules": [],
@@ -235,7 +308,19 @@
       }
     ],
     "functions": [],
-    "typealiases": [],
+    "typealiases": [
+      {
+        "name": "Item",
+        "ctype": "miscellaneous",
+        "subtype": "typealias",
+        "rawtype": "literal type",
+        "file": "src/app/shared/components/card/card.interface.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "description": "",
+        "kind": 187
+      }
+    ],
     "enumerations": [],
     "groupedVariables": {
       "src/app/app.config.ts": [
@@ -265,7 +350,21 @@
     },
     "groupedFunctions": {},
     "groupedEnumerations": {},
-    "groupedTypeAliases": {}
+    "groupedTypeAliases": {
+      "src/app/shared/components/card/card.interface.ts": [
+        {
+          "name": "Item",
+          "ctype": "miscellaneous",
+          "subtype": "typealias",
+          "rawtype": "literal type",
+          "file": "src/app/shared/components/card/card.interface.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "description": "",
+          "kind": 187
+        }
+      ]
+    }
   },
   "routes": [],
   "coverage": {
@@ -317,6 +416,24 @@
         "name": "ButtonProps",
         "coveragePercent": 0,
         "coverageCount": "0/4",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/shared/components/card/card.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "CardComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/2",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/shared/components/card/card.interface.ts",
+        "type": "interface",
+        "linktype": "interface",
+        "name": "CardProps",
+        "coveragePercent": 0,
+        "coverageCount": "0/2",
         "status": "low"
       },
       {
