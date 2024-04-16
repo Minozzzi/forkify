@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 * {
@@ -74,7 +74,7 @@ table {
     --secondary-950: 31 85% 22%;
 
     --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 14.95 9% 34.9%;
 
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;

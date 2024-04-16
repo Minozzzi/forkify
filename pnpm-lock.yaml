@@ -29,6 +29,9 @@ dependencies:
   '@angular/router':
     specifier: ^17.3.0
     version: 17.3.0(@angular/common@17.3.0)(@angular/core@17.3.0)(@angular/platform-browser@17.3.0)(rxjs@7.8.0)
+  lucide-angular:
+    specifier: ^0.368.0
+    version: 0.368.0(@angular/common@17.3.0)(@angular/core@17.3.0)
   rxjs:
     specifier: ~7.8.0
     version: 7.8.0
@@ -10195,6 +10198,17 @@ packages:
       yallist: 4.0.0
     dev: true
 
+  /lucide-angular@0.368.0(@angular/common@17.3.0)(@angular/core@17.3.0):
+    resolution: {integrity: sha512-Bqfi+4vnQ97Lg177+m5W0VL6DR40Hbz66pgDkRHQlnT8g6KavlMhiHCBF+HnKYLdNOwn1Wnpf8HFNg9fAnjT4Q==}
+    peerDependencies:
+      '@angular/common': 13.x - 17.x
+      '@angular/core': 13.x - 17.x
+    dependencies:
+      '@angular/common': 17.3.0(@angular/core@17.3.0)(rxjs@7.8.0)
+      '@angular/core': 17.3.0(rxjs@7.8.0)(zone.js@0.14.3)
+      tslib: 2.6.2
+    dev: false
+
   /lunr@2.3.9:
     resolution: {integrity: sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow==}
     dev: true
@@ -13143,7 +13157,6 @@ packages:
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
-    dev: true
 
   /tsutils@3.21.0(typescript@5.4.2):
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
