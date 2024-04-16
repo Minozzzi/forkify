@@ -1,0 +1,7 @@
+<input
+	class="bg-primary-100 rounded-full border border-primary-300 py-2 px-4 text-base text-secondary-900 ring-offset-primary-400 placeholder:text-primary-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 disabled:cursor-not-allowed disabled:opacity-50"
+	[value]="inputProps.value"
+	[type]="inputProps.type"
+	[placeholder]="inputProps.placeholder"
+	(change)="inputProps.onchange?.($event)"
+/>
