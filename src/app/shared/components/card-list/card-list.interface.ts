@@ -4,6 +4,6 @@ type Item = {
   publisher: string
 }
 
-export interface CardProps {
+export interface CardListProps {
   items: Item[]
 }

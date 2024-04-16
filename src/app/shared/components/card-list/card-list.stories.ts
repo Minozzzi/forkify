@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/angular'
-import { CardComponent } from './card.component'
+import { CardListComponent } from './card-list.component'
 
-const meta: Meta<CardComponent> = {
-  title: 'Components/Card',
-  component: CardComponent,
+const meta: Meta<CardListComponent> = {
+  title: 'Components/CardList',
+  component: CardListComponent,
   tags: ['autodocs']
 }
 
 export default meta
-type Story = StoryObj<CardComponent>
+type Story = StoryObj<CardListComponent>
 
 export const Primary: Story = {
   args: {
-    cardProps: {
+    cardListProps: {
       items: [
         {
           publisher: '101 Cookbooks',
