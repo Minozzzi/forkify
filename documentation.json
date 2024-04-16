@@ -1,499 +1,499 @@
 {
-  "pipes": [],
-  "interfaces": [
-    {
-      "name": "ButtonProps",
-      "id": "interface-ButtonProps-11b16e0003c6945138b23add0ee43e625cab40c13dd3b4b434b7a1dff40d4917747c245230f940994c510dbbb44e6c551158be91a8fc3b8ac98b529b593dbe82",
-      "file": "src/app/shared/components/button/button.interface.ts",
-      "deprecated": false,
-      "deprecationMessage": "",
-      "type": "interface",
-      "sourceCode": "import type { VariantProps } from 'tailwind-variants'\nimport { buttonStyles } from './button.component.styles'\n\nexport interface ButtonProps extends VariantProps<typeof buttonStyles> {\n  type?: 'button' | 'submit'\n  disabled?: boolean\n  class?: string\n}\n",
-      "properties": [
-        {
-          "name": "class",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "string",
-          "optional": true,
-          "description": "",
-          "line": 7
-        },
-        {
-          "name": "disabled",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "boolean",
-          "optional": true,
-          "description": "",
-          "line": 6
-        },
-        {
-          "name": "type",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "\"button\" | \"submit\"",
-          "optional": true,
-          "description": "",
-          "line": 5
-        }
-      ],
-      "indexSignatures": [],
-      "kind": 171,
-      "methods": [],
-      "extends": ["VariantProps"]
-    },
-    {
-      "name": "CardListProps",
-      "id": "interface-CardListProps-dea7d83638419335c06d0d1c4ebbe3306d61d5d94d7f71ea2e802b661ae13ea42d9b725ac56d806a44e0b391449cd174cba469aa46fd7bc552da7734c490539c",
-      "file": "src/app/shared/components/card-list/card-list.interface.ts",
-      "deprecated": false,
-      "deprecationMessage": "",
-      "type": "interface",
-      "sourceCode": "type Item = {\n  imageUrl: string\n  title: string\n  publisher: string\n}\n\nexport interface CardListProps {\n  items: Item[]\n}\n",
-      "properties": [
-        {
-          "name": "items",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "Item[]",
-          "optional": false,
-          "description": "",
-          "line": 8
-        }
-      ],
-      "indexSignatures": [],
-      "kind": 171,
-      "methods": [],
-      "extends": []
-    }
-  ],
-  "injectables": [],
-  "guards": [],
-  "interceptors": [],
-  "classes": [],
-  "directives": [],
-  "components": [
-    {
-      "name": "AppComponent",
-      "id": "component-AppComponent-e5a8a0ed6724f421cab1f34bb808c1597e6e96079f730120c4042fb2a447100336c79d3459b4864315bbe2d83f5b89acce5fd2489acebc0b8f15c3d89c248005",
-      "file": "src/app/app.component.ts",
-      "encapsulation": [],
-      "entryComponents": [],
-      "inputs": [],
-      "outputs": [],
-      "providers": [],
-      "selector": "app-root",
-      "styleUrls": [],
-      "styles": [],
-      "templateUrl": ["./app.component.html"],
-      "viewProviders": [],
-      "hostDirectives": [],
-      "inputsClass": [],
-      "outputsClass": [],
-      "propertiesClass": [],
-      "methodsClass": [],
-      "deprecated": false,
-      "deprecationMessage": "",
-      "hostBindings": [],
-      "hostListeners": [],
-      "standalone": true,
-      "imports": [
-        {
-          "name": "RouterOutlet"
-        }
-      ],
-      "description": "",
-      "rawdescription": "\n",
-      "type": "component",
-      "sourceCode": "import { Component } from '@angular/core'\nimport { RouterOutlet } from '@angular/router'\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [RouterOutlet],\n  templateUrl: './app.component.html'\n})\nexport class AppComponent {}\n",
-      "assetsDirs": [],
-      "styleUrlsData": "",
-      "stylesData": "",
-      "extends": [],
-      "templateData": "<router-outlet></router-outlet>\n"
-    },
-    {
-      "name": "ButtonComponent",
-      "id": "component-ButtonComponent-51fae997c5275b5b7278d2c15ca9ee9c5d78f72a0755c511c701f389b6088b4663c78f1ea5f64c6b5314f0b79de4b2b81ba47176ccbab1d0f3607d1be49da5f1",
-      "file": "src/app/shared/components/button/button.component.ts",
-      "encapsulation": [],
-      "entryComponents": [],
-      "inputs": [],
-      "outputs": [],
-      "providers": [],
-      "selector": "app-button",
-      "styleUrls": [],
-      "styles": [],
-      "templateUrl": ["./button.component.html"],
-      "viewProviders": [],
-      "hostDirectives": [],
-      "inputsClass": [
-        {
-          "name": "buttonProps",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "line": 15,
-          "type": "ButtonProps",
-          "decorators": []
-        }
-      ],
-      "outputsClass": [
-        {
-          "name": "handleOnClick",
-          "defaultValue": "new EventEmitter<Event>()",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "line": 18,
-          "type": "EventEmitter"
-        }
-      ],
-      "propertiesClass": [],
-      "methodsClass": [
-        {
-          "name": "onClick",
-          "args": [],
-          "optional": false,
-          "returnType": "void",
-          "typeParameters": [],
-          "line": 28,
-          "deprecated": false,
-          "deprecationMessage": ""
-        }
-      ],
-      "deprecated": false,
-      "deprecationMessage": "",
-      "hostBindings": [],
-      "hostListeners": [],
-      "standalone": true,
-      "imports": [
-        {
-          "name": "CommonModule",
-          "type": "module"
-        }
-      ],
-      "description": "",
-      "rawdescription": "\n",
-      "type": "component",
-      "sourceCode": "import { CommonModule } from '@angular/common'\nimport { Component, EventEmitter, Input, Output } from '@angular/core'\n\nimport { ButtonProps } from './button.interface'\nimport { buttonStyles } from './button.component.styles'\n\n@Component({\n  selector: 'app-button',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './button.component.html'\n})\nexport class ButtonComponent {\n  @Input()\n  buttonProps?: ButtonProps\n\n  @Output()\n  handleOnClick = new EventEmitter<Event>()\n\n  get className() {\n    return buttonStyles({\n      className: this.buttonProps?.class,\n      size: this.buttonProps?.size,\n      variant: this.buttonProps?.variant\n    })\n  }\n\n  onClick() {\n    this.handleOnClick.emit()\n  }\n}\n",
-      "assetsDirs": [],
-      "styleUrlsData": "",
-      "stylesData": "",
-      "extends": [],
-      "accessors": {
-        "className": {
-          "name": "className",
-          "getSignature": {
-            "name": "className",
-            "type": "",
-            "returnType": "",
-            "line": 20
-          }
-        }
-      },
-      "templateData": "<button\n  [className]=\"className\"\n  [type]=\"buttonProps?.type\"\n  [disabled]=\"buttonProps?.disabled\"\n  onclick=\"onClick()\"\n>\n  <ng-content></ng-content>\n</button>\n"
-    },
-    {
-      "name": "CardComponent",
-      "id": "component-CardComponent-e881e362bc24af0c2f676d3f89741b33b650603feceb2c51dddda6e8eaebe474ee5213812edd1dd249e8ad01da909631fc59778294508f70fd670c9970ca77eb",
-      "file": "src/app/shared/components/card/card.component.ts",
-      "encapsulation": [],
-      "entryComponents": [],
-      "inputs": [],
-      "outputs": [],
-      "providers": [],
-      "selector": "app-card",
-      "styleUrls": [],
-      "styles": [],
-      "templateUrl": ["./card.component.html"],
-      "viewProviders": [],
-      "hostDirectives": [],
-      "inputsClass": [],
-      "outputsClass": [],
-      "propertiesClass": [],
-      "methodsClass": [],
-      "deprecated": false,
-      "deprecationMessage": "",
-      "hostBindings": [],
-      "hostListeners": [],
-      "standalone": true,
-      "imports": [
-        {
-          "name": "LucideAngularModule",
-          "type": "module"
-        }
-      ],
-      "description": "",
-      "rawdescription": "\n",
-      "type": "component",
-      "sourceCode": "import { Component } from '@angular/core'\nimport { LucideAngularModule } from 'lucide-angular'\n\n@Component({\n  selector: 'app-card',\n  standalone: true,\n  imports: [LucideAngularModule],\n  templateUrl: './card.component.html'\n})\nexport class CardComponent {}\n",
-      "assetsDirs": [],
-      "styleUrlsData": "",
-      "stylesData": "",
-      "extends": [],
-      "templateData": "<section\n  class=\"flex flex-col sm:max-w-sm md:max-w-md max-lg:max-w-lg xl:max-w-xl\"\n>\n  <figure\n    class=\"flex flex-col items-center relative before:content-normal before:w-full before:h-full before:absolute before:top-0 before:left-0 before:bg-gradient-to-br before:from-primary-500 before:to-secondary-500 before:opacity-30\"\n  >\n    <img\n      class=\"w-full h-full object-cover\"\n      src=\"http://forkify-api.herokuapp.com/images/best_pizza_dough_recipe1b20.jpg\"\n      alt=\"Imagem da receita\"\n    />\n    <h1\n      class=\"absolute box-decoration-clone -skew-y-6 bottom-0 translate-y-1/2 font-bold text-white sm:text-lg md:text-xl lg:text-1xl xl:text-3xl uppercase px-4 py-6 md:px-6 md:py-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg\"\n    >\n      Best Pizza Dough\n    </h1>\n  </figure>\n\n  <div class=\"flex items-center justify-around bg-secondary-50 pt-20 pb-6 px-4\">\n    <div class=\"text-lg\">\n      <lucide-icon name=\"clock\"></lucide-icon>\n      <span class=\"font-bold\">75</span> minutes\n    </div>\n\n    <div class=\"text-lg\"><span class=\"font-bold\">75</span> servings</div>\n  </div>\n\n  <div class=\"flex flex-col items-center bg-primary-50 py-8 px-6\">\n    <h2 class=\"text-xl font-bold text-primary-400 mb-6\">RECIPE INGREDIENTS</h2>\n\n    <div class=\"grid grid-cols-1 gap-6 sm:grid-cols-2\">\n      <div class=\"text-base\">4 oz cream chesse room temperature</div>\n      <div>1/4 cup sour cream</div>\n\n      <div>1/4 cup maionsese</div>\n      <div>1/2 cup mozzarella grated</div>\n    </div>\n  </div>\n</section>\n"
-    },
-    {
-      "name": "CardListComponent",
-      "id": "component-CardListComponent-9397d1dc3502417baccc6f7e9d6235be9f4232d1f09dc796b8217de4b0f7ebebbb0605adb963db13deab3abbdfad1b270c6700c3e4ad38dc501557ccc354b0e6",
-      "file": "src/app/shared/components/card-list/card-list.component.ts",
-      "encapsulation": [],
-      "entryComponents": [],
-      "inputs": [],
-      "outputs": [],
-      "providers": [],
-      "selector": "app-card-list",
-      "styleUrls": [],
-      "styles": [],
-      "templateUrl": ["./card-list.component.html"],
-      "viewProviders": [],
-      "hostDirectives": [],
-      "inputsClass": [
-        {
-          "name": "cardListProps",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "line": 12,
-          "type": "CardListProps",
-          "decorators": []
-        }
-      ],
-      "outputsClass": [],
-      "propertiesClass": [],
-      "methodsClass": [],
-      "deprecated": false,
-      "deprecationMessage": "",
-      "hostBindings": [],
-      "hostListeners": [],
-      "standalone": true,
-      "imports": [
-        {
-          "name": "CommonModule",
-          "type": "module"
-        }
-      ],
-      "description": "",
-      "rawdescription": "\n",
-      "type": "component",
-      "sourceCode": "import { CommonModule } from '@angular/common'\nimport { Component, Input } from '@angular/core'\nimport { CardListProps } from './card-list.interface'\n\n@Component({\n  selector: 'app-card-list',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './card-list.component.html'\n})\nexport class CardListComponent {\n  @Input() cardListProps?: CardListProps\n}\n",
-      "assetsDirs": [],
-      "styleUrlsData": "",
-      "stylesData": "",
-      "extends": [],
-      "templateData": "<section class=\"flex flex-col bg-secondary-50\">\n  <ng-container *ngFor=\"let item of cardListProps?.items\">\n    <div\n      class=\"flex flex-row items-center gap-4 px-8 py-6 cursor-pointer duration-300 ease-in-out transform hover:bg-primary-100 hover:scale-y-110\"\n    >\n      <img\n        class=\"w-16 h-16 rounded-full\"\n        [src]=\"item.imageUrl\"\n        alt=\"Imagem do alimento gerado pela receita\"\n      />\n      <div class=\"flex flex-col\">\n        <span class=\"font-semibold text-lg text-primary-500\">\n          {{ item.title }}\n        </span>\n\n        <span class=\"text-primary-950 text-sm\"> {{ item.publisher }}</span>\n      </div>\n    </div>\n  </ng-container>\n</section>\n"
-    },
-    {
-      "name": "HeaderComponent",
-      "id": "component-HeaderComponent-a058c4ada86eab13a9e789ce3e40d0b6d4ea60235d7556ea0c160d870895bb2ee62a0df87599753e71086d0f76ae8a353009caa6b5a8f7376622ad58b380707a",
-      "file": "src/app/shared/components/header/header.component.ts",
-      "encapsulation": [],
-      "entryComponents": [],
-      "inputs": [],
-      "outputs": [],
-      "providers": [],
-      "selector": "app-header",
-      "styleUrls": [],
-      "styles": [],
-      "templateUrl": ["./header.component.html"],
-      "viewProviders": [],
-      "hostDirectives": [],
-      "inputsClass": [],
-      "outputsClass": [],
-      "propertiesClass": [],
-      "methodsClass": [],
-      "deprecated": false,
-      "deprecationMessage": "",
-      "hostBindings": [],
-      "hostListeners": [],
-      "standalone": true,
-      "imports": [
-        {
-          "name": "CommonModule",
-          "type": "module"
-        }
-      ],
-      "description": "",
-      "rawdescription": "\n",
-      "type": "component",
-      "sourceCode": "import { CommonModule } from '@angular/common'\nimport { Component } from '@angular/core'\n\n@Component({\n  selector: 'app-header',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './header.component.html'\n})\nexport class HeaderComponent {}\n",
-      "assetsDirs": [],
-      "styleUrlsData": "",
-      "stylesData": "",
-      "extends": [],
-      "templateData": "<header class=\"flex justify-start items-center p-5 shadow-100 bg-secondary-100\">\n  <img class=\"max-w-40\" src=\"/src/assets/forkify-logo.png\" alt=\"Forkify Logo\" />\n</header>\n"
-    }
-  ],
-  "modules": [],
-  "miscellaneous": {
-    "variables": [
-      {
-        "name": "appConfig",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
-        "file": "src/app/app.config.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "ApplicationConfig",
-        "defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    importProvidersFrom(LucideAngularModule.pick({ Clock }))\n  ]\n}"
-      },
-      {
-        "name": "buttonStyles",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
-        "file": "src/app/shared/components/button/button.component.styles.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "",
-        "defaultValue": "tv({\n  base: 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',\n  variants: {\n    variant: {\n      default: 'bg-primary-500 text-white hover:bg-primary-600',\n      destructive: 'bg-destructive text-white hover:bg-red-600',\n      other: 'bg-',\n      outline:\n        'border border-input bg-white hover:bg-accent hover:text-accent-foreground',\n      secondary: 'bg-secondary-500 text-white hover:bg-secondary-600',\n      ghost: 'hover:bg-accent hover:text-accent-foreground',\n      link: 'text-primary underline-offset-4 hover:underline'\n    },\n    size: {\n      default: 'h-10 px-4 py-2',\n      sm: 'h-9 rounded-md px-3',\n      lg: 'h-11 rounded-md px-8',\n      icon: 'h-10 w-10'\n    }\n  },\n  defaultVariants: {\n    variant: 'default',\n    size: 'default'\n  }\n})"
-      }
-    ],
-    "functions": [],
-    "typealiases": [
-      {
-        "name": "Item",
-        "ctype": "miscellaneous",
-        "subtype": "typealias",
-        "rawtype": "literal type",
-        "file": "src/app/shared/components/card-list/card-list.interface.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "description": "",
-        "kind": 187
-      }
-    ],
-    "enumerations": [],
-    "groupedVariables": {
-      "src/app/app.config.ts": [
-        {
-          "name": "appConfig",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "src/app/app.config.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "ApplicationConfig",
-          "defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    importProvidersFrom(LucideAngularModule.pick({ Clock }))\n  ]\n}"
-        }
-      ],
-      "src/app/shared/components/button/button.component.styles.ts": [
-        {
-          "name": "buttonStyles",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "src/app/shared/components/button/button.component.styles.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "",
-          "defaultValue": "tv({\n  base: 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',\n  variants: {\n    variant: {\n      default: 'bg-primary-500 text-white hover:bg-primary-600',\n      destructive: 'bg-destructive text-white hover:bg-red-600',\n      other: 'bg-',\n      outline:\n        'border border-input bg-white hover:bg-accent hover:text-accent-foreground',\n      secondary: 'bg-secondary-500 text-white hover:bg-secondary-600',\n      ghost: 'hover:bg-accent hover:text-accent-foreground',\n      link: 'text-primary underline-offset-4 hover:underline'\n    },\n    size: {\n      default: 'h-10 px-4 py-2',\n      sm: 'h-9 rounded-md px-3',\n      lg: 'h-11 rounded-md px-8',\n      icon: 'h-10 w-10'\n    }\n  },\n  defaultVariants: {\n    variant: 'default',\n    size: 'default'\n  }\n})"
-        }
-      ]
-    },
-    "groupedFunctions": {},
-    "groupedEnumerations": {},
-    "groupedTypeAliases": {
-      "src/app/shared/components/card-list/card-list.interface.ts": [
-        {
-          "name": "Item",
-          "ctype": "miscellaneous",
-          "subtype": "typealias",
-          "rawtype": "literal type",
-          "file": "src/app/shared/components/card-list/card-list.interface.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "description": "",
-          "kind": 187
-        }
-      ]
-    }
-  },
-  "routes": [],
-  "coverage": {
-    "count": 0,
-    "status": "low",
-    "files": [
-      {
-        "filePath": "src/app/app.component.ts",
-        "type": "component",
-        "linktype": "component",
-        "name": "AppComponent",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "src/app/app.config.ts",
-        "type": "variable",
-        "linktype": "miscellaneous",
-        "linksubtype": "variable",
-        "name": "appConfig",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "src/app/shared/components/button/button.component.styles.ts",
-        "type": "variable",
-        "linktype": "miscellaneous",
-        "linksubtype": "variable",
-        "name": "buttonStyles",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "src/app/shared/components/button/button.component.ts",
-        "type": "component",
-        "linktype": "component",
-        "name": "ButtonComponent",
-        "coveragePercent": 0,
-        "coverageCount": "0/4",
-        "status": "low"
-      },
-      {
-        "filePath": "src/app/shared/components/button/button.interface.ts",
-        "type": "interface",
-        "linktype": "interface",
-        "name": "ButtonProps",
-        "coveragePercent": 0,
-        "coverageCount": "0/4",
-        "status": "low"
-      },
-      {
-        "filePath": "src/app/shared/components/card-list/card-list.component.ts",
-        "type": "component",
-        "linktype": "component",
-        "name": "CardListComponent",
-        "coveragePercent": 0,
-        "coverageCount": "0/2",
-        "status": "low"
-      },
-      {
-        "filePath": "src/app/shared/components/card-list/card-list.interface.ts",
-        "type": "interface",
-        "linktype": "interface",
-        "name": "CardListProps",
-        "coveragePercent": 0,
-        "coverageCount": "0/2",
-        "status": "low"
-      },
-      {
-        "filePath": "src/app/shared/components/card/card.component.ts",
-        "type": "component",
-        "linktype": "component",
-        "name": "CardComponent",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "src/app/shared/components/header/header.component.ts",
-        "type": "component",
-        "linktype": "component",
-        "name": "HeaderComponent",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      }
-    ]
-  }
+	"pipes": [],
+	"interfaces": [
+		{
+			"name": "ButtonProps",
+			"id": "interface-ButtonProps-11b16e0003c6945138b23add0ee43e625cab40c13dd3b4b434b7a1dff40d4917747c245230f940994c510dbbb44e6c551158be91a8fc3b8ac98b529b593dbe82",
+			"file": "src/app/shared/components/button/button.interface.ts",
+			"deprecated": false,
+			"deprecationMessage": "",
+			"type": "interface",
+			"sourceCode": "import type { VariantProps } from 'tailwind-variants'\nimport { buttonStyles } from './button.component.styles'\n\nexport interface ButtonProps extends VariantProps<typeof buttonStyles> {\n  type?: 'button' | 'submit'\n  disabled?: boolean\n  class?: string\n}\n",
+			"properties": [
+				{
+					"name": "class",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": true,
+					"description": "",
+					"line": 7
+				},
+				{
+					"name": "disabled",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "boolean",
+					"optional": true,
+					"description": "",
+					"line": 6
+				},
+				{
+					"name": "type",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "\"button\" | \"submit\"",
+					"optional": true,
+					"description": "",
+					"line": 5
+				}
+			],
+			"indexSignatures": [],
+			"kind": 171,
+			"methods": [],
+			"extends": ["VariantProps"]
+		},
+		{
+			"name": "CardListProps",
+			"id": "interface-CardListProps-dea7d83638419335c06d0d1c4ebbe3306d61d5d94d7f71ea2e802b661ae13ea42d9b725ac56d806a44e0b391449cd174cba469aa46fd7bc552da7734c490539c",
+			"file": "src/app/shared/components/card-list/card-list.interface.ts",
+			"deprecated": false,
+			"deprecationMessage": "",
+			"type": "interface",
+			"sourceCode": "type Item = {\n  imageUrl: string\n  title: string\n  publisher: string\n}\n\nexport interface CardListProps {\n  items: Item[]\n}\n",
+			"properties": [
+				{
+					"name": "items",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "Item[]",
+					"optional": false,
+					"description": "",
+					"line": 8
+				}
+			],
+			"indexSignatures": [],
+			"kind": 171,
+			"methods": [],
+			"extends": []
+		}
+	],
+	"injectables": [],
+	"guards": [],
+	"interceptors": [],
+	"classes": [],
+	"directives": [],
+	"components": [
+		{
+			"name": "AppComponent",
+			"id": "component-AppComponent-e5a8a0ed6724f421cab1f34bb808c1597e6e96079f730120c4042fb2a447100336c79d3459b4864315bbe2d83f5b89acce5fd2489acebc0b8f15c3d89c248005",
+			"file": "src/app/app.component.ts",
+			"encapsulation": [],
+			"entryComponents": [],
+			"inputs": [],
+			"outputs": [],
+			"providers": [],
+			"selector": "app-root",
+			"styleUrls": [],
+			"styles": [],
+			"templateUrl": ["./app.component.html"],
+			"viewProviders": [],
+			"hostDirectives": [],
+			"inputsClass": [],
+			"outputsClass": [],
+			"propertiesClass": [],
+			"methodsClass": [],
+			"deprecated": false,
+			"deprecationMessage": "",
+			"hostBindings": [],
+			"hostListeners": [],
+			"standalone": true,
+			"imports": [
+				{
+					"name": "RouterOutlet"
+				}
+			],
+			"description": "",
+			"rawdescription": "\n",
+			"type": "component",
+			"sourceCode": "import { Component } from '@angular/core'\nimport { RouterOutlet } from '@angular/router'\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [RouterOutlet],\n  templateUrl: './app.component.html'\n})\nexport class AppComponent {}\n",
+			"assetsDirs": [],
+			"styleUrlsData": "",
+			"stylesData": "",
+			"extends": [],
+			"templateData": "<router-outlet></router-outlet>\n"
+		},
+		{
+			"name": "ButtonComponent",
+			"id": "component-ButtonComponent-51fae997c5275b5b7278d2c15ca9ee9c5d78f72a0755c511c701f389b6088b4663c78f1ea5f64c6b5314f0b79de4b2b81ba47176ccbab1d0f3607d1be49da5f1",
+			"file": "src/app/shared/components/button/button.component.ts",
+			"encapsulation": [],
+			"entryComponents": [],
+			"inputs": [],
+			"outputs": [],
+			"providers": [],
+			"selector": "app-button",
+			"styleUrls": [],
+			"styles": [],
+			"templateUrl": ["./button.component.html"],
+			"viewProviders": [],
+			"hostDirectives": [],
+			"inputsClass": [
+				{
+					"name": "buttonProps",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"line": 15,
+					"type": "ButtonProps",
+					"decorators": []
+				}
+			],
+			"outputsClass": [
+				{
+					"name": "handleOnClick",
+					"defaultValue": "new EventEmitter<Event>()",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"line": 18,
+					"type": "EventEmitter"
+				}
+			],
+			"propertiesClass": [],
+			"methodsClass": [
+				{
+					"name": "onClick",
+					"args": [],
+					"optional": false,
+					"returnType": "void",
+					"typeParameters": [],
+					"line": 28,
+					"deprecated": false,
+					"deprecationMessage": ""
+				}
+			],
+			"deprecated": false,
+			"deprecationMessage": "",
+			"hostBindings": [],
+			"hostListeners": [],
+			"standalone": true,
+			"imports": [
+				{
+					"name": "CommonModule",
+					"type": "module"
+				}
+			],
+			"description": "",
+			"rawdescription": "\n",
+			"type": "component",
+			"sourceCode": "import { CommonModule } from '@angular/common'\nimport { Component, EventEmitter, Input, Output } from '@angular/core'\n\nimport { ButtonProps } from './button.interface'\nimport { buttonStyles } from './button.component.styles'\n\n@Component({\n  selector: 'app-button',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './button.component.html'\n})\nexport class ButtonComponent {\n  @Input()\n  buttonProps?: ButtonProps\n\n  @Output()\n  handleOnClick = new EventEmitter<Event>()\n\n  get className() {\n    return buttonStyles({\n      className: this.buttonProps?.class,\n      size: this.buttonProps?.size,\n      variant: this.buttonProps?.variant\n    })\n  }\n\n  onClick() {\n    this.handleOnClick.emit()\n  }\n}\n",
+			"assetsDirs": [],
+			"styleUrlsData": "",
+			"stylesData": "",
+			"extends": [],
+			"accessors": {
+				"className": {
+					"name": "className",
+					"getSignature": {
+						"name": "className",
+						"type": "",
+						"returnType": "",
+						"line": 20
+					}
+				}
+			},
+			"templateData": "<button\n  [className]=\"className\"\n  [type]=\"buttonProps?.type\"\n  [disabled]=\"buttonProps?.disabled\"\n  onclick=\"onClick()\"\n>\n  <ng-content></ng-content>\n</button>\n"
+		},
+		{
+			"name": "CardComponent",
+			"id": "component-CardComponent-e881e362bc24af0c2f676d3f89741b33b650603feceb2c51dddda6e8eaebe474ee5213812edd1dd249e8ad01da909631fc59778294508f70fd670c9970ca77eb",
+			"file": "src/app/shared/components/card/card.component.ts",
+			"encapsulation": [],
+			"entryComponents": [],
+			"inputs": [],
+			"outputs": [],
+			"providers": [],
+			"selector": "app-card",
+			"styleUrls": [],
+			"styles": [],
+			"templateUrl": ["./card.component.html"],
+			"viewProviders": [],
+			"hostDirectives": [],
+			"inputsClass": [],
+			"outputsClass": [],
+			"propertiesClass": [],
+			"methodsClass": [],
+			"deprecated": false,
+			"deprecationMessage": "",
+			"hostBindings": [],
+			"hostListeners": [],
+			"standalone": true,
+			"imports": [
+				{
+					"name": "LucideAngularModule",
+					"type": "module"
+				}
+			],
+			"description": "",
+			"rawdescription": "\n",
+			"type": "component",
+			"sourceCode": "import { Component } from '@angular/core'\nimport { LucideAngularModule } from 'lucide-angular'\n\n@Component({\n  selector: 'app-card',\n  standalone: true,\n  imports: [LucideAngularModule],\n  templateUrl: './card.component.html'\n})\nexport class CardComponent {}\n",
+			"assetsDirs": [],
+			"styleUrlsData": "",
+			"stylesData": "",
+			"extends": [],
+			"templateData": "<section\n  class=\"flex flex-col sm:max-w-sm md:max-w-md max-lg:max-w-lg xl:max-w-xl\"\n>\n  <figure\n    class=\"flex flex-col items-center relative before:content-normal before:w-full before:h-full before:absolute before:top-0 before:left-0 before:bg-gradient-to-br before:from-primary-500 before:to-secondary-500 before:opacity-30\"\n  >\n    <img\n      class=\"w-full h-full object-cover\"\n      src=\"http://forkify-api.herokuapp.com/images/best_pizza_dough_recipe1b20.jpg\"\n      alt=\"Imagem da receita\"\n    />\n    <h1\n      class=\"absolute box-decoration-clone -skew-y-6 bottom-0 translate-y-1/2 font-bold text-white sm:text-lg md:text-xl lg:text-1xl xl:text-3xl uppercase px-4 py-6 md:px-6 md:py-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg\"\n    >\n      Best Pizza Dough\n    </h1>\n  </figure>\n\n  <div class=\"flex items-center justify-around bg-secondary-50 pt-20 pb-6 px-4\">\n    <div class=\"text-lg\">\n      <lucide-icon name=\"clock\"></lucide-icon>\n      <span class=\"font-bold\">75</span> minutes\n    </div>\n\n    <div class=\"text-lg\"><span class=\"font-bold\">75</span> servings</div>\n  </div>\n\n  <div class=\"flex flex-col items-center bg-primary-50 py-8 px-6\">\n    <h2 class=\"text-xl font-bold text-primary-400 mb-6\">RECIPE INGREDIENTS</h2>\n\n    <div class=\"grid grid-cols-1 gap-6 sm:grid-cols-2\">\n      <div class=\"text-base\">4 oz cream chesse room temperature</div>\n      <div>1/4 cup sour cream</div>\n\n      <div>1/4 cup maionsese</div>\n      <div>1/2 cup mozzarella grated</div>\n    </div>\n  </div>\n</section>\n"
+		},
+		{
+			"name": "CardListComponent",
+			"id": "component-CardListComponent-9397d1dc3502417baccc6f7e9d6235be9f4232d1f09dc796b8217de4b0f7ebebbb0605adb963db13deab3abbdfad1b270c6700c3e4ad38dc501557ccc354b0e6",
+			"file": "src/app/shared/components/card-list/card-list.component.ts",
+			"encapsulation": [],
+			"entryComponents": [],
+			"inputs": [],
+			"outputs": [],
+			"providers": [],
+			"selector": "app-card-list",
+			"styleUrls": [],
+			"styles": [],
+			"templateUrl": ["./card-list.component.html"],
+			"viewProviders": [],
+			"hostDirectives": [],
+			"inputsClass": [
+				{
+					"name": "cardListProps",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"line": 12,
+					"type": "CardListProps",
+					"decorators": []
+				}
+			],
+			"outputsClass": [],
+			"propertiesClass": [],
+			"methodsClass": [],
+			"deprecated": false,
+			"deprecationMessage": "",
+			"hostBindings": [],
+			"hostListeners": [],
+			"standalone": true,
+			"imports": [
+				{
+					"name": "CommonModule",
+					"type": "module"
+				}
+			],
+			"description": "",
+			"rawdescription": "\n",
+			"type": "component",
+			"sourceCode": "import { CommonModule } from '@angular/common'\nimport { Component, Input } from '@angular/core'\nimport { CardListProps } from './card-list.interface'\n\n@Component({\n  selector: 'app-card-list',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './card-list.component.html'\n})\nexport class CardListComponent {\n  @Input() cardListProps?: CardListProps\n}\n",
+			"assetsDirs": [],
+			"styleUrlsData": "",
+			"stylesData": "",
+			"extends": [],
+			"templateData": "<section class=\"flex flex-col bg-secondary-50\">\n  <ng-container *ngFor=\"let item of cardListProps?.items\">\n    <div\n      class=\"flex flex-row items-center gap-4 px-8 py-6 cursor-pointer duration-300 ease-in-out transform hover:bg-primary-100 hover:scale-y-110\"\n    >\n      <img\n        class=\"w-16 h-16 rounded-full\"\n        [src]=\"item.imageUrl\"\n        alt=\"Imagem do alimento gerado pela receita\"\n      />\n      <div class=\"flex flex-col\">\n        <span class=\"font-semibold text-lg text-primary-500\">\n          {{ item.title }}\n        </span>\n\n        <span class=\"text-primary-950 text-sm\"> {{ item.publisher }}</span>\n      </div>\n    </div>\n  </ng-container>\n</section>\n"
+		},
+		{
+			"name": "HeaderComponent",
+			"id": "component-HeaderComponent-a058c4ada86eab13a9e789ce3e40d0b6d4ea60235d7556ea0c160d870895bb2ee62a0df87599753e71086d0f76ae8a353009caa6b5a8f7376622ad58b380707a",
+			"file": "src/app/shared/components/header/header.component.ts",
+			"encapsulation": [],
+			"entryComponents": [],
+			"inputs": [],
+			"outputs": [],
+			"providers": [],
+			"selector": "app-header",
+			"styleUrls": [],
+			"styles": [],
+			"templateUrl": ["./header.component.html"],
+			"viewProviders": [],
+			"hostDirectives": [],
+			"inputsClass": [],
+			"outputsClass": [],
+			"propertiesClass": [],
+			"methodsClass": [],
+			"deprecated": false,
+			"deprecationMessage": "",
+			"hostBindings": [],
+			"hostListeners": [],
+			"standalone": true,
+			"imports": [
+				{
+					"name": "CommonModule",
+					"type": "module"
+				}
+			],
+			"description": "",
+			"rawdescription": "\n",
+			"type": "component",
+			"sourceCode": "import { CommonModule } from '@angular/common'\nimport { Component } from '@angular/core'\n\n@Component({\n  selector: 'app-header',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './header.component.html'\n})\nexport class HeaderComponent {}\n",
+			"assetsDirs": [],
+			"styleUrlsData": "",
+			"stylesData": "",
+			"extends": [],
+			"templateData": "<header class=\"flex justify-start items-center p-5 shadow-100 bg-secondary-100\">\n  <img class=\"max-w-40\" src=\"/src/assets/forkify-logo.png\" alt=\"Forkify Logo\" />\n</header>\n"
+		}
+	],
+	"modules": [],
+	"miscellaneous": {
+		"variables": [
+			{
+				"name": "appConfig",
+				"ctype": "miscellaneous",
+				"subtype": "variable",
+				"file": "src/app/app.config.ts",
+				"deprecated": false,
+				"deprecationMessage": "",
+				"type": "ApplicationConfig",
+				"defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    importProvidersFrom(LucideAngularModule.pick({ Clock }))\n  ]\n}"
+			},
+			{
+				"name": "buttonStyles",
+				"ctype": "miscellaneous",
+				"subtype": "variable",
+				"file": "src/app/shared/components/button/button.component.styles.ts",
+				"deprecated": false,
+				"deprecationMessage": "",
+				"type": "",
+				"defaultValue": "tv({\n  base: 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',\n  variants: {\n    variant: {\n      default: 'bg-primary-500 text-white hover:bg-primary-600',\n      destructive: 'bg-destructive text-white hover:bg-red-600',\n      other: 'bg-',\n      outline:\n        'border border-input bg-white hover:bg-accent hover:text-accent-foreground',\n      secondary: 'bg-secondary-500 text-white hover:bg-secondary-600',\n      ghost: 'hover:bg-accent hover:text-accent-foreground',\n      link: 'text-primary underline-offset-4 hover:underline'\n    },\n    size: {\n      default: 'h-10 px-4 py-2',\n      sm: 'h-9 rounded-md px-3',\n      lg: 'h-11 rounded-md px-8',\n      icon: 'h-10 w-10'\n    }\n  },\n  defaultVariants: {\n    variant: 'default',\n    size: 'default'\n  }\n})"
+			}
+		],
+		"functions": [],
+		"typealiases": [
+			{
+				"name": "Item",
+				"ctype": "miscellaneous",
+				"subtype": "typealias",
+				"rawtype": "literal type",
+				"file": "src/app/shared/components/card-list/card-list.interface.ts",
+				"deprecated": false,
+				"deprecationMessage": "",
+				"description": "",
+				"kind": 187
+			}
+		],
+		"enumerations": [],
+		"groupedVariables": {
+			"src/app/app.config.ts": [
+				{
+					"name": "appConfig",
+					"ctype": "miscellaneous",
+					"subtype": "variable",
+					"file": "src/app/app.config.ts",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "ApplicationConfig",
+					"defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    importProvidersFrom(LucideAngularModule.pick({ Clock }))\n  ]\n}"
+				}
+			],
+			"src/app/shared/components/button/button.component.styles.ts": [
+				{
+					"name": "buttonStyles",
+					"ctype": "miscellaneous",
+					"subtype": "variable",
+					"file": "src/app/shared/components/button/button.component.styles.ts",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "",
+					"defaultValue": "tv({\n  base: 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',\n  variants: {\n    variant: {\n      default: 'bg-primary-500 text-white hover:bg-primary-600',\n      destructive: 'bg-destructive text-white hover:bg-red-600',\n      other: 'bg-',\n      outline:\n        'border border-input bg-white hover:bg-accent hover:text-accent-foreground',\n      secondary: 'bg-secondary-500 text-white hover:bg-secondary-600',\n      ghost: 'hover:bg-accent hover:text-accent-foreground',\n      link: 'text-primary underline-offset-4 hover:underline'\n    },\n    size: {\n      default: 'h-10 px-4 py-2',\n      sm: 'h-9 rounded-md px-3',\n      lg: 'h-11 rounded-md px-8',\n      icon: 'h-10 w-10'\n    }\n  },\n  defaultVariants: {\n    variant: 'default',\n    size: 'default'\n  }\n})"
+				}
+			]
+		},
+		"groupedFunctions": {},
+		"groupedEnumerations": {},
+		"groupedTypeAliases": {
+			"src/app/shared/components/card-list/card-list.interface.ts": [
+				{
+					"name": "Item",
+					"ctype": "miscellaneous",
+					"subtype": "typealias",
+					"rawtype": "literal type",
+					"file": "src/app/shared/components/card-list/card-list.interface.ts",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"description": "",
+					"kind": 187
+				}
+			]
+		}
+	},
+	"routes": [],
+	"coverage": {
+		"count": 0,
+		"status": "low",
+		"files": [
+			{
+				"filePath": "src/app/app.component.ts",
+				"type": "component",
+				"linktype": "component",
+				"name": "AppComponent",
+				"coveragePercent": 0,
+				"coverageCount": "0/1",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/app.config.ts",
+				"type": "variable",
+				"linktype": "miscellaneous",
+				"linksubtype": "variable",
+				"name": "appConfig",
+				"coveragePercent": 0,
+				"coverageCount": "0/1",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/shared/components/button/button.component.styles.ts",
+				"type": "variable",
+				"linktype": "miscellaneous",
+				"linksubtype": "variable",
+				"name": "buttonStyles",
+				"coveragePercent": 0,
+				"coverageCount": "0/1",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/shared/components/button/button.component.ts",
+				"type": "component",
+				"linktype": "component",
+				"name": "ButtonComponent",
+				"coveragePercent": 0,
+				"coverageCount": "0/4",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/shared/components/button/button.interface.ts",
+				"type": "interface",
+				"linktype": "interface",
+				"name": "ButtonProps",
+				"coveragePercent": 0,
+				"coverageCount": "0/4",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/shared/components/card-list/card-list.component.ts",
+				"type": "component",
+				"linktype": "component",
+				"name": "CardListComponent",
+				"coveragePercent": 0,
+				"coverageCount": "0/2",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/shared/components/card-list/card-list.interface.ts",
+				"type": "interface",
+				"linktype": "interface",
+				"name": "CardListProps",
+				"coveragePercent": 0,
+				"coverageCount": "0/2",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/shared/components/card/card.component.ts",
+				"type": "component",
+				"linktype": "component",
+				"name": "CardComponent",
+				"coveragePercent": 0,
+				"coverageCount": "0/1",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/shared/components/header/header.component.ts",
+				"type": "component",
+				"linktype": "component",
+				"name": "HeaderComponent",
+				"coveragePercent": 0,
+				"coverageCount": "0/1",
+				"status": "low"
+			}
+		]
+	}
 }

@@ -1,20 +1,20 @@
 <section class="flex flex-col bg-secondary-50">
-  <ng-container *ngFor="let item of cardListProps?.items">
-    <div
-      class="flex flex-row items-center gap-4 px-8 py-6 cursor-pointer duration-300 ease-in-out transform hover:bg-primary-100 hover:scale-y-110"
-    >
-      <img
-        class="w-16 h-16 rounded-full"
-        [src]="item.imageUrl"
-        alt="Imagem do alimento gerado pela receita"
-      />
-      <div class="flex flex-col">
-        <span class="font-semibold text-lg text-primary-500">
-          {{ item.title }}
-        </span>
+	<ng-container *ngFor="let item of cardListProps?.items">
+		<div
+			class="flex flex-row items-center gap-4 px-8 py-6 cursor-pointer duration-300 ease-in-out transform hover:bg-primary-100 hover:scale-y-110"
+		>
+			<img
+				class="w-16 h-16 rounded-full"
+				[src]="item.imageUrl"
+				alt="Imagem do alimento gerado pela receita"
+			/>
+			<div class="flex flex-col">
+				<span class="font-semibold text-lg text-primary-500">
+					{{ item.title }}
+				</span>
 
-        <span class="text-primary-950 text-sm"> {{ item.publisher }}</span>
-      </div>
-    </div>
-  </ng-container>
+				<span class="text-primary-950 text-sm"> {{ item.publisher }}</span>
+			</div>
+		</div>
+	</ng-container>
 </section>
