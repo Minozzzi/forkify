@@ -8,14 +8,20 @@ import {
 	CircleMinus,
 	Check,
 	BookmarkPlus,
-	BookmarkMinus
+	BookmarkMinus,
+	Search,
+	Pizza,
+	ChevronLeft,
+	ChevronRight
 } from 'lucide-angular'
 
 import { routes } from './app.routes'
+import { provideHttpClient } from '@angular/common/http'
 
 export const appConfig: ApplicationConfig = {
 	providers: [
 		provideRouter(routes),
+		provideHttpClient(),
 		importProvidersFrom(
 			LucideAngularModule.pick({
 				Clock,
@@ -24,7 +30,11 @@ export const appConfig: ApplicationConfig = {
 				CircleMinus,
 				Check,
 				BookmarkPlus,
-				BookmarkMinus
+				BookmarkMinus,
+				Search,
+				Pizza,
+				ChevronLeft,
+				ChevronRight
 			})
 		)
 	]

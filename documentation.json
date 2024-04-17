@@ -3,21 +3,21 @@
 	"interfaces": [
 		{
 			"name": "ButtonProps",
-			"id": "interface-ButtonProps-11b16e0003c6945138b23add0ee43e625cab40c13dd3b4b434b7a1dff40d4917747c245230f940994c510dbbb44e6c551158be91a8fc3b8ac98b529b593dbe82",
+			"id": "interface-ButtonProps-fade921600f17b13143dd2f5fb443aac188b7decbfd2c828d4ebae93c3f42a079292e194034fc5bd4bc7bce2d51f7bdaa4132dfcbc22e67f5623293cc7991018",
 			"file": "src/app/shared/components/button/button.interface.ts",
 			"deprecated": false,
 			"deprecationMessage": "",
 			"type": "interface",
-			"sourceCode": "import type { VariantProps } from 'tailwind-variants'\nimport { buttonStyles } from './button.component.styles'\n\nexport interface ButtonProps extends VariantProps<typeof buttonStyles> {\n  type?: 'button' | 'submit'\n  disabled?: boolean\n  class?: string\n}\n",
+			"sourceCode": "import type { VariantProps } from 'tailwind-variants'\n\nimport { buttonStyles } from './button.component.styles'\n\nexport interface ButtonProps extends VariantProps<typeof buttonStyles> {\n\ttype?: 'button' | 'submit'\n\tdisabled?: boolean\n\tclassName?: string\n}\n",
 			"properties": [
 				{
-					"name": "class",
+					"name": "className",
 					"deprecated": false,
 					"deprecationMessage": "",
 					"type": "string",
 					"optional": true,
 					"description": "",
-					"line": 7
+					"line": 8
 				},
 				{
 					"name": "disabled",
@@ -26,7 +26,7 @@
 					"type": "boolean",
 					"optional": true,
 					"description": "",
-					"line": 6
+					"line": 7
 				},
 				{
 					"name": "type",
@@ -35,7 +35,7 @@
 					"type": "\"button\" | \"submit\"",
 					"optional": true,
 					"description": "",
-					"line": 5
+					"line": 6
 				}
 			],
 			"indexSignatures": [],
@@ -45,13 +45,22 @@
 		},
 		{
 			"name": "CardListProps",
-			"id": "interface-CardListProps-dea7d83638419335c06d0d1c4ebbe3306d61d5d94d7f71ea2e802b661ae13ea42d9b725ac56d806a44e0b391449cd174cba469aa46fd7bc552da7734c490539c",
+			"id": "interface-CardListProps-3712e002f22572c590c88d33357cd0599d1f70aed72cf0e9c709b5974007674ba9e7895c308a5ac3efa17bddabaea67c3ed8968bc5c75bfa79d305d8f1f2d235",
 			"file": "src/app/shared/components/card-list/card-list.interface.ts",
 			"deprecated": false,
 			"deprecationMessage": "",
 			"type": "interface",
-			"sourceCode": "type Item = {\n  imageUrl: string\n  title: string\n  publisher: string\n}\n\nexport interface CardListProps {\n  items: Item[]\n}\n",
+			"sourceCode": "type Item = {\n\tid: string\n\ttitle: string\n\timageUrl: string\n\tpublisher: string\n}\n\nexport interface CardListProps {\n\titems: Item[]\n\tclassName?: string\n}\n",
 			"properties": [
+				{
+					"name": "className",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": true,
+					"description": "",
+					"line": 10
+				},
 				{
 					"name": "items",
 					"deprecated": false,
@@ -59,7 +68,268 @@
 					"type": "Item[]",
 					"optional": false,
 					"description": "",
+					"line": 9
+				}
+			],
+			"indexSignatures": [],
+			"kind": 171,
+			"methods": [],
+			"extends": []
+		},
+		{
+			"name": "CardProps",
+			"id": "interface-CardProps-2f112d1a89d4a1e2c4c43010c8aff086bee78f7db9e53567ef37ce05dae8e639db3b21dfb15dbb3ff48c6175702573d801347f6f03292f70821d4bda643755ea",
+			"file": "src/app/shared/components/card/card.interface.ts",
+			"deprecated": false,
+			"deprecationMessage": "",
+			"type": "interface",
+			"sourceCode": "type Ingredient = {\n\tquantity: string | null\n\tunit: string | null\n\tdescription: string\n}\n\nexport interface CardProps {\n\tid: string\n\timage: {\n\t\turl: string\n\t\talt: string\n\t}\n\ttitle: string\n\tcookingTime: string\n\tservings: string\n\tsubTitle: string\n\tingredients: Ingredient[]\n\n\tclassName?: string\n}\n",
+			"properties": [
+				{
+					"name": "className",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": true,
+					"description": "",
+					"line": 19
+				},
+				{
+					"name": "cookingTime",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": false,
+					"description": "",
+					"line": 14
+				},
+				{
+					"name": "id",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": false,
+					"description": "",
 					"line": 8
+				},
+				{
+					"name": "image",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "literal type",
+					"optional": false,
+					"description": "",
+					"line": 9
+				},
+				{
+					"name": "ingredients",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "Ingredient[]",
+					"optional": false,
+					"description": "",
+					"line": 17
+				},
+				{
+					"name": "servings",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": false,
+					"description": "",
+					"line": 15
+				},
+				{
+					"name": "subTitle",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": false,
+					"description": "",
+					"line": 16
+				},
+				{
+					"name": "title",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": false,
+					"description": "",
+					"line": 13
+				}
+			],
+			"indexSignatures": [],
+			"kind": 171,
+			"methods": [],
+			"extends": []
+		},
+		{
+			"name": "HeaderProps",
+			"id": "interface-HeaderProps-b184af8f56ea167489ad0c622641635efba04baa8e728ac91bcabe8062dae5b6042cb646f38044cba9a879663e67e8cd322bb41294dd19ee5b4022277c87a7ce",
+			"file": "src/app/shared/components/header/header.interface.ts",
+			"deprecated": false,
+			"deprecationMessage": "",
+			"type": "interface",
+			"sourceCode": "export interface HeaderProps {\n\tlogo?: string\n\tclassName?: string\n}\n",
+			"properties": [
+				{
+					"name": "className",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": true,
+					"description": "",
+					"line": 3
+				},
+				{
+					"name": "logo",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": true,
+					"description": "",
+					"line": 2
+				}
+			],
+			"indexSignatures": [],
+			"kind": 171,
+			"methods": [],
+			"extends": []
+		},
+		{
+			"name": "InputProps",
+			"id": "interface-InputProps-7e8f29231189ce115cea11f4a7cc61e708af0f38dae6d5322d51e956f64667058ceb4b0c5619ab9ab31ff65397a30ebd70aed750a79459e8b1bdd9ba91b1e178",
+			"file": "src/app/shared/components/input/input.interface.ts",
+			"deprecated": false,
+			"deprecationMessage": "",
+			"type": "interface",
+			"sourceCode": "export interface InputProps {\n\tvalue: string\n\ttype: HTMLInputElement['type']\n\tplaceholder?: string\n}\n",
+			"properties": [
+				{
+					"name": "placeholder",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": true,
+					"description": "",
+					"line": 4
+				},
+				{
+					"name": "type",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "",
+					"optional": false,
+					"description": "",
+					"line": 3
+				},
+				{
+					"name": "value",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": false,
+					"description": "",
+					"line": 2
+				}
+			],
+			"indexSignatures": [],
+			"kind": 171,
+			"methods": [],
+			"extends": []
+		},
+		{
+			"name": "IRecipeService",
+			"id": "interface-IRecipeService-1bd9a6f397602897156f3bca503b61380fe0ee5553f82337731ad8f22e4b27789f03e06aa68dc60bd781a4a20a38bdc2b8dee2a747775249b77393dff7a2e882",
+			"file": "src/app/domain/use-cases/recipe.use-case.ts",
+			"deprecated": false,
+			"deprecationMessage": "",
+			"type": "interface",
+			"sourceCode": "import { Observable } from 'rxjs'\nimport { Recipe } from '../models/recipe.model'\n\nexport type GetRecipesResponse = {\n\trecipes: Recipe[]\n\tresults: number\n}\n\nexport interface IRecipeService {\n\tgetRecipes: (searchValue: string) => Observable<GetRecipesResponse>\n}\n",
+			"properties": [
+				{
+					"name": "getRecipes",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "function",
+					"optional": false,
+					"description": "",
+					"line": 10
+				}
+			],
+			"indexSignatures": [],
+			"kind": 171,
+			"methods": [],
+			"extends": []
+		},
+		{
+			"name": "LoadingProps",
+			"id": "interface-LoadingProps-2dfd464edc7f04f09b231ff07ed35af6e08b77622ffa8d90821bda668fefe6e8a6816a6ddce9ba09459e11ae1635ed935b59ef117e24946b1ff98c2c4b802f6a",
+			"file": "src/app/shared/components/loading/loading.interface.ts",
+			"deprecated": false,
+			"deprecationMessage": "",
+			"type": "interface",
+			"sourceCode": "import type { VariantProps } from 'tailwind-variants'\n\nimport { loadingStyles } from './loading.component.styles'\n\nexport interface LoadingProps extends VariantProps<typeof loadingStyles> {\n\tclassName?: string\n}\n",
+			"properties": [
+				{
+					"name": "className",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": true,
+					"description": "",
+					"line": 6
+				}
+			],
+			"indexSignatures": [],
+			"kind": 171,
+			"methods": [],
+			"extends": ["VariantProps"]
+		},
+		{
+			"name": "PaginationProps",
+			"id": "interface-PaginationProps-ad58b8445178fb1388330f7a71298b8214d32d346aa2ba61996e9467e299fb214b793eb2d14f674b66e147dc8dd7ecfb7ec8019828618a7bad13dcb107861ce6",
+			"file": "src/app/shared/components/pagination/pagination.interface.ts",
+			"deprecated": false,
+			"deprecationMessage": "",
+			"type": "interface",
+			"sourceCode": "export interface PaginationProps {\n\tpreviousPage: string\n\tnextPage: string\n\tonClickPreviousPage: () => void\n\tonClickNextPage: () => void\n}\n",
+			"properties": [
+				{
+					"name": "nextPage",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": false,
+					"description": "",
+					"line": 3
+				},
+				{
+					"name": "onClickNextPage",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "function",
+					"optional": false,
+					"description": "",
+					"line": 5
+				},
+				{
+					"name": "onClickPreviousPage",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "function",
+					"optional": false,
+					"description": "",
+					"line": 4
+				},
+				{
+					"name": "previousPage",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": false,
+					"description": "",
+					"line": 2
 				}
 			],
 			"indexSignatures": [],
@@ -68,7 +338,70 @@
 			"extends": []
 		}
 	],
-	"injectables": [],
+	"injectables": [
+		{
+			"name": "RecipeService",
+			"id": "injectable-RecipeService-c20b9cfa4b5cde24154a3da06fd7fbfa90e4e8b79aa06a4a69c09a4df6831fb3555d198febf704693912472d8ac16195450e6b5877226f0f2a6cce069ee6e2e2",
+			"file": "src/app/data/use-cases/recipe.use-case.ts",
+			"properties": [
+				{
+					"name": "getRecipes",
+					"defaultValue": "() => {...}",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "",
+					"optional": false,
+					"description": "",
+					"line": 19
+				},
+				{
+					"name": "url",
+					"defaultValue": "'https://forkify-api.herokuapp.com/api/v2/recipes'",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": false,
+					"description": "",
+					"line": 15,
+					"modifierKind": [123, 148]
+				}
+			],
+			"methods": [],
+			"deprecated": false,
+			"deprecationMessage": "",
+			"description": "",
+			"rawdescription": "\n",
+			"sourceCode": "import { HttpClient } from '@angular/common/http'\nimport { Injectable } from '@angular/core'\nimport {\n\tGetRecipesResponse,\n\tIRecipeService\n} from '../../domain/use-cases/recipe.use-case'\nimport { map } from 'rxjs'\nimport { Recipe } from '../../domain/models/recipe.model'\n\n@Injectable({\n\tprovidedIn: 'root'\n})\nexport class RecipeService implements IRecipeService {\n\tprivate readonly url = 'https://forkify-api.herokuapp.com/api/v2/recipes'\n\n\tconstructor(private readonly httpClient: HttpClient) {}\n\n\tgetRecipes: IRecipeService['getRecipes'] = (searchValue) => {\n\t\treturn this.httpClient.get(`${this.url}?search=${searchValue}`).pipe(\n\t\t\tmap(\n\t\t\t\t(response: any) =>\n\t\t\t\t\t({\n\t\t\t\t\t\trecipes:\n\t\t\t\t\t\t\tresponse.data.recipes.map(\n\t\t\t\t\t\t\t\t(recipe: any) =>\n\t\t\t\t\t\t\t\t\t({\n\t\t\t\t\t\t\t\t\t\tid: recipe.id,\n\t\t\t\t\t\t\t\t\t\timageUrl: recipe.image_url,\n\t\t\t\t\t\t\t\t\t\tpublisher: recipe.publisher,\n\t\t\t\t\t\t\t\t\t\ttitle: recipe.title\n\t\t\t\t\t\t\t\t\t}) as Recipe\n\t\t\t\t\t\t\t) ?? [],\n\t\t\t\t\t\tresults: response.results ?? 0\n\t\t\t\t\t}) as GetRecipesResponse\n\t\t\t)\n\t\t)\n\t}\n}\n",
+			"constructorObj": {
+				"name": "constructor",
+				"description": "",
+				"deprecated": false,
+				"deprecationMessage": "",
+				"args": [
+					{
+						"name": "httpClient",
+						"type": "HttpClient",
+						"deprecated": false,
+						"deprecationMessage": ""
+					}
+				],
+				"line": 15,
+				"jsdoctags": [
+					{
+						"name": "httpClient",
+						"type": "HttpClient",
+						"deprecated": false,
+						"deprecationMessage": "",
+						"tagName": {
+							"text": "param"
+						}
+					}
+				]
+			},
+			"extends": [],
+			"type": "injectable"
+		}
+	],
 	"guards": [],
 	"interceptors": [],
 	"classes": [],
@@ -76,7 +409,7 @@
 	"components": [
 		{
 			"name": "AppComponent",
-			"id": "component-AppComponent-e5a8a0ed6724f421cab1f34bb808c1597e6e96079f730120c4042fb2a447100336c79d3459b4864315bbe2d83f5b89acce5fd2489acebc0b8f15c3d89c248005",
+			"id": "component-AppComponent-eb5332cfa985bda5201cf2a8a8e2334643214f966ea616d07bfdd4ae50b0dd5bf9010d5d0578e50dff4e2e4747dd55617ac78820bca7730c499b610e72088bd0",
 			"file": "src/app/app.component.ts",
 			"encapsulation": [],
 			"entryComponents": [],
@@ -101,12 +434,16 @@
 			"imports": [
 				{
 					"name": "RouterOutlet"
+				},
+				{
+					"name": "ContentComponent",
+					"type": "component"
 				}
 			],
 			"description": "",
 			"rawdescription": "\n",
 			"type": "component",
-			"sourceCode": "import { Component } from '@angular/core'\nimport { RouterOutlet } from '@angular/router'\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [RouterOutlet],\n  templateUrl: './app.component.html'\n})\nexport class AppComponent {}\n",
+			"sourceCode": "import { Component } from '@angular/core'\nimport { RouterOutlet } from '@angular/router'\nimport { ContentComponent } from './layout/content/content.component'\n\n@Component({\n\tselector: 'app-root',\n\tstandalone: true,\n\timports: [RouterOutlet, ContentComponent],\n\ttemplateUrl: './app.component.html'\n})\nexport class AppComponent {}\n",
 			"assetsDirs": [],
 			"styleUrlsData": "",
 			"stylesData": "",
@@ -115,7 +452,7 @@
 		},
 		{
 			"name": "ButtonComponent",
-			"id": "component-ButtonComponent-51fae997c5275b5b7278d2c15ca9ee9c5d78f72a0755c511c701f389b6088b4663c78f1ea5f64c6b5314f0b79de4b2b81ba47176ccbab1d0f3607d1be49da5f1",
+			"id": "component-ButtonComponent-85a38dd877e77e7a7569dd814076faf3aef08f710066b6a0df28cec14986667a2faf82086ed8b0ecdcd7828070ab2678fb8ab449012af2dd4b46842ec2e7788d",
 			"file": "src/app/shared/components/button/button.component.ts",
 			"encapsulation": [],
 			"entryComponents": [],
@@ -130,7 +467,8 @@
 			"hostDirectives": [],
 			"inputsClass": [
 				{
-					"name": "buttonProps",
+					"name": "props",
+					"defaultValue": "{} as ButtonProps",
 					"deprecated": false,
 					"deprecationMessage": "",
 					"line": 15,
@@ -138,29 +476,9 @@
 					"decorators": []
 				}
 			],
-			"outputsClass": [
-				{
-					"name": "handleOnClick",
-					"defaultValue": "new EventEmitter<Event>()",
-					"deprecated": false,
-					"deprecationMessage": "",
-					"line": 18,
-					"type": "EventEmitter"
-				}
-			],
+			"outputsClass": [],
 			"propertiesClass": [],
-			"methodsClass": [
-				{
-					"name": "onClick",
-					"args": [],
-					"optional": false,
-					"returnType": "void",
-					"typeParameters": [],
-					"line": 28,
-					"deprecated": false,
-					"deprecationMessage": ""
-				}
-			],
+			"methodsClass": [],
 			"deprecated": false,
 			"deprecationMessage": "",
 			"hostBindings": [],
@@ -175,7 +493,7 @@
 			"description": "",
 			"rawdescription": "\n",
 			"type": "component",
-			"sourceCode": "import { CommonModule } from '@angular/common'\nimport { Component, EventEmitter, Input, Output } from '@angular/core'\n\nimport { ButtonProps } from './button.interface'\nimport { buttonStyles } from './button.component.styles'\n\n@Component({\n  selector: 'app-button',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './button.component.html'\n})\nexport class ButtonComponent {\n  @Input()\n  buttonProps?: ButtonProps\n\n  @Output()\n  handleOnClick = new EventEmitter<Event>()\n\n  get className() {\n    return buttonStyles({\n      className: this.buttonProps?.class,\n      size: this.buttonProps?.size,\n      variant: this.buttonProps?.variant\n    })\n  }\n\n  onClick() {\n    this.handleOnClick.emit()\n  }\n}\n",
+			"sourceCode": "import { CommonModule } from '@angular/common'\nimport { Component, Input } from '@angular/core'\n\nimport { buttonStyles } from './button.component.styles'\n\nimport type { ButtonProps } from './button.interface'\n\n@Component({\n\tselector: 'app-button',\n\tstandalone: true,\n\timports: [CommonModule],\n\ttemplateUrl: './button.component.html'\n})\nexport class ButtonComponent {\n\t@Input() props: ButtonProps = {} as ButtonProps\n\n\tget className() {\n\t\treturn buttonStyles({\n\t\t\tclassName: this.props?.className,\n\t\t\tsize: this.props?.size,\n\t\t\tvariant: this.props?.variant\n\t\t})\n\t}\n}\n",
 			"assetsDirs": [],
 			"styleUrlsData": "",
 			"stylesData": "",
@@ -187,15 +505,15 @@
 						"name": "className",
 						"type": "",
 						"returnType": "",
-						"line": 20
+						"line": 17
 					}
 				}
 			},
-			"templateData": "<button\n  [className]=\"className\"\n  [type]=\"buttonProps?.type\"\n  [disabled]=\"buttonProps?.disabled\"\n  onclick=\"onClick()\"\n>\n  <ng-content></ng-content>\n</button>\n"
+			"templateData": "<button [className]=\"className\" [type]=\"props.type\" [disabled]=\"props.disabled\">\n\t<ng-content></ng-content>\n</button>\n"
 		},
 		{
 			"name": "CardComponent",
-			"id": "component-CardComponent-e881e362bc24af0c2f676d3f89741b33b650603feceb2c51dddda6e8eaebe474ee5213812edd1dd249e8ad01da909631fc59778294508f70fd670c9970ca77eb",
+			"id": "component-CardComponent-87f1f41f6d8c3e872305b33282d661e5b0b855d7053fa32a2f75c7cc5e8ee8986f2ef662cb675e82dda6ce790b3d93f709bac7e0c83316c5da6cb4eea269d4d2",
 			"file": "src/app/shared/components/card/card.component.ts",
 			"encapsulation": [],
 			"entryComponents": [],
@@ -208,7 +526,17 @@
 			"templateUrl": ["./card.component.html"],
 			"viewProviders": [],
 			"hostDirectives": [],
-			"inputsClass": [],
+			"inputsClass": [
+				{
+					"name": "props",
+					"defaultValue": "{} as CardProps",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"line": 14,
+					"type": "CardProps",
+					"decorators": []
+				}
+			],
 			"outputsClass": [],
 			"propertiesClass": [],
 			"methodsClass": [],
@@ -219,6 +547,10 @@
 			"standalone": true,
 			"imports": [
 				{
+					"name": "CommonModule",
+					"type": "module"
+				},
+				{
 					"name": "LucideAngularModule",
 					"type": "module"
 				}
@@ -226,16 +558,16 @@
 			"description": "",
 			"rawdescription": "\n",
 			"type": "component",
-			"sourceCode": "import { Component } from '@angular/core'\nimport { LucideAngularModule } from 'lucide-angular'\n\n@Component({\n  selector: 'app-card',\n  standalone: true,\n  imports: [LucideAngularModule],\n  templateUrl: './card.component.html'\n})\nexport class CardComponent {}\n",
+			"sourceCode": "import { CommonModule } from '@angular/common'\nimport { Component, Input } from '@angular/core'\nimport { LucideAngularModule } from 'lucide-angular'\n\nimport type { CardProps } from './card.interface'\n\n@Component({\n\tselector: 'app-card',\n\tstandalone: true,\n\timports: [CommonModule, LucideAngularModule],\n\ttemplateUrl: './card.component.html'\n})\nexport class CardComponent {\n\t@Input() props: CardProps = {} as CardProps\n}\n",
 			"assetsDirs": [],
 			"styleUrlsData": "",
 			"stylesData": "",
 			"extends": [],
-			"templateData": "<section\n  class=\"flex flex-col sm:max-w-sm md:max-w-md max-lg:max-w-lg xl:max-w-xl\"\n>\n  <figure\n    class=\"flex flex-col items-center relative before:content-normal before:w-full before:h-full before:absolute before:top-0 before:left-0 before:bg-gradient-to-br before:from-primary-500 before:to-secondary-500 before:opacity-30\"\n  >\n    <img\n      class=\"w-full h-full object-cover\"\n      src=\"http://forkify-api.herokuapp.com/images/best_pizza_dough_recipe1b20.jpg\"\n      alt=\"Imagem da receita\"\n    />\n    <h1\n      class=\"absolute box-decoration-clone -skew-y-6 bottom-0 translate-y-1/2 font-bold text-white sm:text-lg md:text-xl lg:text-1xl xl:text-3xl uppercase px-4 py-6 md:px-6 md:py-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg\"\n    >\n      Best Pizza Dough\n    </h1>\n  </figure>\n\n  <div class=\"flex items-center justify-around bg-secondary-50 pt-20 pb-6 px-4\">\n    <div class=\"text-lg\">\n      <lucide-icon name=\"clock\"></lucide-icon>\n      <span class=\"font-bold\">75</span> minutes\n    </div>\n\n    <div class=\"text-lg\"><span class=\"font-bold\">75</span> servings</div>\n  </div>\n\n  <div class=\"flex flex-col items-center bg-primary-50 py-8 px-6\">\n    <h2 class=\"text-xl font-bold text-primary-400 mb-6\">RECIPE INGREDIENTS</h2>\n\n    <div class=\"grid grid-cols-1 gap-6 sm:grid-cols-2\">\n      <div class=\"text-base\">4 oz cream chesse room temperature</div>\n      <div>1/4 cup sour cream</div>\n\n      <div>1/4 cup maionsese</div>\n      <div>1/2 cup mozzarella grated</div>\n    </div>\n  </div>\n</section>\n"
+			"templateData": "<section class=\"flex flex-col w-full\" [ngClass]=\"props.className\">\n\t<figure\n\t\tclass=\"flex flex-col items-center relative before:content-normal before:w-full before:h-full before:absolute before:top-0 before:left-0 before:bg-gradient-to-br before:from-primary-500 before:to-secondary-500 before:opacity-30\"\n\t>\n\t\t<div\n\t\t\tclass=\"absolute right-0 rounded-bl-lg bg-gradient-to-br from-primary-500 to-secondary-500 p-4 cursor-pointer\"\n\t\t>\n\t\t\t<lucide-icon name=\"bookmark-plus\" class=\"text-white\"></lucide-icon>\n\t\t</div>\n\t\t<img\n\t\t\tclass=\"w-full h-full object-cover\"\n\t\t\t[src]=\"props.image.url\"\n\t\t\t[alt]=\"props.image.alt\"\n\t\t/>\n\t\t<h1\n\t\t\tclass=\"absolute -skew-y-6 bottom-0 translate-y-1/2 font-bold text-white sm:text-lg md:text-xl lg:text-1xl xl:text-3xl uppercase px-4 py-6 md:px-6 md:py-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg\"\n\t\t>\n\t\t\t{{ props.title }}\n\t\t</h1>\n\t</figure>\n\n\t<div class=\"flex items-center justify-around bg-secondary-50 pt-24 pb-6 px-4\">\n\t\t<div class=\"flex items-center gap-2 text-lg\">\n\t\t\t<lucide-icon name=\"clock\" class=\"text-primary-500\"></lucide-icon>\n\t\t\t<span class=\"font-bold\">{{ props.cookingTime }}</span> minutes\n\t\t</div>\n\n\t\t<div class=\"flex items-center gap-2 text-lg\">\n\t\t\t<lucide-icon name=\"users-round\" class=\"text-primary-500\"></lucide-icon>\n\t\t\t<span class=\"font-bold\">{{ props.servings }}</span> servings\n\t\t\t<div class=\"flex items-center gap-1\">\n\t\t\t\t<lucide-icon\n\t\t\t\t\tname=\"circle-minus\"\n\t\t\t\t\tclass=\"text-primary-500 cursor-pointer\"\n\t\t\t\t\tsize=\"20\"\n\t\t\t\t></lucide-icon>\n\n\t\t\t\t<lucide-icon\n\t\t\t\t\tname=\"circle-plus\"\n\t\t\t\t\tclass=\"text-primary-500 cursor-pointer\"\n\t\t\t\t\tsize=\"20\"\n\t\t\t\t></lucide-icon>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\t<div class=\"flex flex-col items-center bg-primary-50 py-8 px-6\">\n\t\t<h2 class=\"text-xl font-bold text-primary-400 mb-6\">\n\t\t\t{{ props.subTitle }}\n\t\t</h2>\n\n\t\t<div class=\"grid grid-cols-1 gap-6 sm:grid-cols-2\">\n\t\t\t<div\n\t\t\t\t*ngFor=\"let ingredient of props?.ingredients\"\n\t\t\t\tclass=\"flex items-center text-center gap-2\"\n\t\t\t>\n\t\t\t\t<lucide-icon name=\"check\"></lucide-icon>\n\t\t\t\t<p>\n\t\t\t\t\t{{ ingredient.quantity ?? '' }} {{ ingredient.unit ?? '' }}\n\t\t\t\t\t{{ ingredient.description }}\n\t\t\t\t</p>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>\n"
 		},
 		{
 			"name": "CardListComponent",
-			"id": "component-CardListComponent-9397d1dc3502417baccc6f7e9d6235be9f4232d1f09dc796b8217de4b0f7ebebbb0605adb963db13deab3abbdfad1b270c6700c3e4ad38dc501557ccc354b0e6",
+			"id": "component-CardListComponent-0e305a0957923a3e32394ae8829a3cea465cf5845ba50c147654766fd4359954a8f73bdd732a63326d0eac4a8b80098724249ed4f54a9c45e020525c580490b1",
 			"file": "src/app/shared/components/card-list/card-list.component.ts",
 			"encapsulation": [],
 			"entryComponents": [],
@@ -250,10 +582,11 @@
 			"hostDirectives": [],
 			"inputsClass": [
 				{
-					"name": "cardListProps",
+					"name": "props",
+					"defaultValue": "{} as CardListProps",
 					"deprecated": false,
 					"deprecationMessage": "",
-					"line": 12,
+					"line": 13,
 					"type": "CardListProps",
 					"decorators": []
 				}
@@ -275,16 +608,63 @@
 			"description": "",
 			"rawdescription": "\n",
 			"type": "component",
-			"sourceCode": "import { CommonModule } from '@angular/common'\nimport { Component, Input } from '@angular/core'\nimport { CardListProps } from './card-list.interface'\n\n@Component({\n  selector: 'app-card-list',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './card-list.component.html'\n})\nexport class CardListComponent {\n  @Input() cardListProps?: CardListProps\n}\n",
+			"sourceCode": "import { CommonModule } from '@angular/common'\nimport { Component, Input } from '@angular/core'\n\nimport type { CardListProps } from './card-list.interface'\n\n@Component({\n\tselector: 'app-card-list',\n\tstandalone: true,\n\timports: [CommonModule],\n\ttemplateUrl: './card-list.component.html'\n})\nexport class CardListComponent {\n\t@Input() props: CardListProps = {} as CardListProps\n}\n",
 			"assetsDirs": [],
 			"styleUrlsData": "",
 			"stylesData": "",
 			"extends": [],
-			"templateData": "<section class=\"flex flex-col bg-secondary-50\">\n  <ng-container *ngFor=\"let item of cardListProps?.items\">\n    <div\n      class=\"flex flex-row items-center gap-4 px-8 py-6 cursor-pointer duration-300 ease-in-out transform hover:bg-primary-100 hover:scale-y-110\"\n    >\n      <img\n        class=\"w-16 h-16 rounded-full\"\n        [src]=\"item.imageUrl\"\n        alt=\"Imagem do alimento gerado pela receita\"\n      />\n      <div class=\"flex flex-col\">\n        <span class=\"font-semibold text-lg text-primary-500\">\n          {{ item.title }}\n        </span>\n\n        <span class=\"text-primary-950 text-sm\"> {{ item.publisher }}</span>\n      </div>\n    </div>\n  </ng-container>\n</section>\n"
+			"templateData": "<section class=\"flex flex-col bg-secondary-50\" [ngClass]=\"props.className\">\n\t<div\n\t\t*ngFor=\"let item of props?.items\"\n\t\tclass=\"flex flex-row items-center gap-4 px-6 py-8 cursor-pointer duration-300 ease-in-out transform hover:bg-primary-100 hover:scale-y-110\"\n\t>\n\t\t<img\n\t\t\tclass=\"w-16 h-16 rounded-full\"\n\t\t\t[src]=\"item.imageUrl\"\n\t\t\talt=\"Imagem do alimento gerado pela receita\"\n\t\t/>\n\t\t<div class=\"flex flex-col\">\n\t\t\t<span class=\"font-semibold text-lg text-primary-500\">\n\t\t\t\t{{ item.title }}\n\t\t\t</span>\n\n\t\t\t<span class=\"text-primary-950 text-sm\"> {{ item.publisher }}</span>\n\t\t</div>\n\t</div>\n</section>\n"
+		},
+		{
+			"name": "ContentComponent",
+			"id": "component-ContentComponent-43b5e293934c0585b05e74f70e7f29ff7f309569cd612f796040c1ef7edd2a64180fd97523308f230f7cfd5ca6bdf159d25534ad098907f35ae458982621eb99",
+			"file": "src/app/layout/content/content.component.ts",
+			"encapsulation": [],
+			"entryComponents": [],
+			"inputs": [],
+			"outputs": [],
+			"providers": [],
+			"selector": "app-content",
+			"styleUrls": [],
+			"styles": [],
+			"templateUrl": ["./content.component.html"],
+			"viewProviders": [],
+			"hostDirectives": [],
+			"inputsClass": [],
+			"outputsClass": [],
+			"propertiesClass": [],
+			"methodsClass": [],
+			"deprecated": false,
+			"deprecationMessage": "",
+			"hostBindings": [],
+			"hostListeners": [],
+			"standalone": true,
+			"imports": [
+				{
+					"name": "RouterOutlet"
+				},
+				{
+					"name": "CommonModule",
+					"type": "module"
+				},
+				{
+					"name": "HeaderComponent",
+					"type": "component"
+				}
+			],
+			"description": "",
+			"rawdescription": "\n",
+			"type": "component",
+			"sourceCode": "import { Component } from '@angular/core'\nimport { RouterOutlet } from '@angular/router'\nimport { CommonModule } from '@angular/common'\n\nimport { HeaderComponent } from '../../shared/components/header/header.component'\n\n@Component({\n\tselector: 'app-content',\n\tstandalone: true,\n\timports: [RouterOutlet, CommonModule, HeaderComponent],\n\ttemplateUrl: './content.component.html'\n})\nexport class ContentComponent {}\n",
+			"assetsDirs": [],
+			"styleUrlsData": "",
+			"stylesData": "",
+			"extends": [],
+			"templateData": "<main\n\tclass=\"grid my-20 mx-auto max-h-max max-w-screen-xl overflow-hidden grid-cols-1 grid-rows-[80px_1fr]\"\n\tstyle=\"\n\t\tgrid-template-areas:\n\t\t\t'header'\n\t\t\t'content';\n\t\"\n>\n\t<app-header\n\t\t[props]=\"{\n\t\t\tclassName: 'rounded-t-lg shadow-200 relative',\n\t\t\tlogo: '/assets/forkify-logo.png'\n\t\t}\"\n\t\t[ngStyle]=\"{\n\t\t\t'grid-area': 'header'\n\t\t}\"\n\t></app-header>\n\n\t<section style=\"grid-area: 'content'\">\n\t\t<router-outlet></router-outlet>\n\t</section>\n</main>\n"
 		},
 		{
 			"name": "HeaderComponent",
-			"id": "component-HeaderComponent-a058c4ada86eab13a9e789ce3e40d0b6d4ea60235d7556ea0c160d870895bb2ee62a0df87599753e71086d0f76ae8a353009caa6b5a8f7376622ad58b380707a",
+			"id": "component-HeaderComponent-13219777983eec1a8785266ad0299f03ac666e09bc281325e0a908fa4764c9c531ddfd09548c4a50812de6b43a10392ffec1edfca79cc0a3228e2934a3ba8b31",
 			"file": "src/app/shared/components/header/header.component.ts",
 			"encapsulation": [],
 			"entryComponents": [],
@@ -297,7 +677,17 @@
 			"templateUrl": ["./header.component.html"],
 			"viewProviders": [],
 			"hostDirectives": [],
-			"inputsClass": [],
+			"inputsClass": [
+				{
+					"name": "props",
+					"defaultValue": "{\n\t\tlogo: '/assets/forkify-logo.png'\n\t}",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"line": 13,
+					"type": "HeaderProps",
+					"decorators": []
+				}
+			],
 			"outputsClass": [],
 			"propertiesClass": [],
 			"methodsClass": [],
@@ -315,12 +705,481 @@
 			"description": "",
 			"rawdescription": "\n",
 			"type": "component",
-			"sourceCode": "import { CommonModule } from '@angular/common'\nimport { Component } from '@angular/core'\n\n@Component({\n  selector: 'app-header',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './header.component.html'\n})\nexport class HeaderComponent {}\n",
+			"sourceCode": "import { CommonModule } from '@angular/common'\nimport { Component, Input } from '@angular/core'\n\nimport type { HeaderProps } from './header.interface'\n\n@Component({\n\tselector: 'app-header',\n\tstandalone: true,\n\timports: [CommonModule],\n\ttemplateUrl: './header.component.html'\n})\nexport class HeaderComponent {\n\t@Input() props: HeaderProps = {\n\t\tlogo: '/assets/forkify-logo.png'\n\t}\n}\n",
 			"assetsDirs": [],
 			"styleUrlsData": "",
 			"stylesData": "",
 			"extends": [],
-			"templateData": "<header class=\"flex justify-start items-center p-5 shadow-100 bg-secondary-100\">\n  <img class=\"max-w-40\" src=\"/src/assets/forkify-logo.png\" alt=\"Forkify Logo\" />\n</header>\n"
+			"templateData": "<header\n\tclass=\"flex justify-start items-center p-5 shadow-100 bg-secondary-100 h-20\"\n\t[ngClass]=\"props.className\"\n>\n\t<img class=\"max-w-40\" [src]=\"props.logo\" alt=\"Forkify Logo\" />\n</header>\n"
+		},
+		{
+			"name": "HomeComponent",
+			"id": "component-HomeComponent-33b674022c9acb782225a432d9fabba5efc8fd36e3bfbb2f18306b51c7a22de08a3f1487e7475b39d7db14bdc2e9a6ead4f30100f351930345f74b0e61dccf95",
+			"file": "src/app/modules/home/home.component.ts",
+			"encapsulation": [],
+			"entryComponents": [],
+			"inputs": [],
+			"outputs": [],
+			"providers": [
+				{
+					"name": "RecipeService",
+					"type": "injectable"
+				}
+			],
+			"selector": "app-home",
+			"styleUrls": [],
+			"styles": [],
+			"templateUrl": ["./home.component.html"],
+			"viewProviders": [],
+			"hostDirectives": [],
+			"inputsClass": [],
+			"outputsClass": [],
+			"propertiesClass": [
+				{
+					"name": "buttonProps",
+					"defaultValue": "{\n\t\tsize: 'default',\n\t\ttype: 'button',\n\t\tvariant: 'default',\n\t\tclassName: 'rounded-full -translate-x-10'\n\t}",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "ButtonProps",
+					"optional": false,
+					"description": "",
+					"line": 54,
+					"modifierKind": [125]
+				},
+				{
+					"name": "cardListProps",
+					"defaultValue": "{\n\t\titems: []\n\t}",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "CardListProps",
+					"optional": false,
+					"description": "",
+					"line": 42,
+					"modifierKind": [125]
+				},
+				{
+					"name": "cardProps",
+					"defaultValue": "{} as CardProps",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "CardProps",
+					"optional": false,
+					"description": "",
+					"line": 46,
+					"modifierKind": [125]
+				},
+				{
+					"name": "inputProps",
+					"defaultValue": "{\n\t\tvalue: this.searchValue,\n\t\tplaceholder: 'Search Recipes',\n\t\ttype: 'text'\n\t}",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "InputProps",
+					"optional": false,
+					"description": "",
+					"line": 48,
+					"modifierKind": [125]
+				},
+				{
+					"name": "loading",
+					"defaultValue": "false",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "",
+					"optional": false,
+					"description": "",
+					"line": 38,
+					"modifierKind": [125]
+				},
+				{
+					"name": "page",
+					"defaultValue": "1",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "number",
+					"optional": false,
+					"description": "",
+					"line": 40,
+					"modifierKind": [125]
+				},
+				{
+					"name": "recipes",
+					"defaultValue": "[]",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "Recipe[]",
+					"optional": false,
+					"description": "",
+					"line": 39,
+					"modifierKind": [125]
+				},
+				{
+					"name": "searchValue",
+					"defaultValue": "''",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "string",
+					"optional": false,
+					"description": "",
+					"line": 37,
+					"modifierKind": [125]
+				}
+			],
+			"methodsClass": [
+				{
+					"name": "getRecipes",
+					"args": [],
+					"optional": false,
+					"returnType": "void",
+					"typeParameters": [],
+					"line": 90,
+					"deprecated": false,
+					"deprecationMessage": "",
+					"modifierKind": [123]
+				},
+				{
+					"name": "handleSearch",
+					"args": [
+						{
+							"name": "event",
+							"type": "Event",
+							"deprecated": false,
+							"deprecationMessage": ""
+						}
+					],
+					"optional": false,
+					"returnType": "void",
+					"typeParameters": [],
+					"line": 63,
+					"deprecated": false,
+					"deprecationMessage": "",
+					"modifierKind": [125],
+					"jsdoctags": [
+						{
+							"name": "event",
+							"type": "Event",
+							"deprecated": false,
+							"deprecationMessage": "",
+							"tagName": {
+								"text": "param"
+							}
+						}
+					]
+				},
+				{
+					"name": "handleSubmitSearch",
+					"args": [],
+					"optional": false,
+					"returnType": "void",
+					"typeParameters": [],
+					"line": 74,
+					"deprecated": false,
+					"deprecationMessage": "",
+					"modifierKind": [125]
+				},
+				{
+					"name": "onSearchKeyDown",
+					"args": [
+						{
+							"name": "event",
+							"type": "KeyboardEvent",
+							"deprecated": false,
+							"deprecationMessage": ""
+						}
+					],
+					"optional": false,
+					"returnType": "void",
+					"typeParameters": [],
+					"line": 68,
+					"deprecated": false,
+					"deprecationMessage": "",
+					"modifierKind": [125],
+					"jsdoctags": [
+						{
+							"name": "event",
+							"type": "KeyboardEvent",
+							"deprecated": false,
+							"deprecationMessage": "",
+							"tagName": {
+								"text": "param"
+							}
+						}
+					]
+				},
+				{
+					"name": "paginateRecipes",
+					"args": [
+						{
+							"name": "recipes",
+							"type": "Recipe[]",
+							"deprecated": false,
+							"deprecationMessage": ""
+						},
+						{
+							"name": "results",
+							"type": "number",
+							"deprecated": false,
+							"deprecationMessage": ""
+						}
+					],
+					"optional": false,
+					"returnType": "void",
+					"typeParameters": [],
+					"line": 78,
+					"deprecated": false,
+					"deprecationMessage": "",
+					"modifierKind": [123],
+					"jsdoctags": [
+						{
+							"name": "recipes",
+							"type": "Recipe[]",
+							"deprecated": false,
+							"deprecationMessage": "",
+							"tagName": {
+								"text": "param"
+							}
+						},
+						{
+							"name": "results",
+							"type": "number",
+							"deprecated": false,
+							"deprecationMessage": "",
+							"tagName": {
+								"text": "param"
+							}
+						}
+					]
+				}
+			],
+			"deprecated": false,
+			"deprecationMessage": "",
+			"hostBindings": [],
+			"hostListeners": [],
+			"standalone": true,
+			"imports": [
+				{
+					"name": "CommonModule",
+					"type": "module"
+				},
+				{
+					"name": "CardListComponent",
+					"type": "component"
+				},
+				{
+					"name": "CardComponent",
+					"type": "component"
+				},
+				{
+					"name": "InputComponent",
+					"type": "component"
+				},
+				{
+					"name": "ButtonComponent",
+					"type": "component"
+				},
+				{
+					"name": "LucideAngularModule",
+					"type": "module"
+				},
+				{
+					"name": "LoadingComponent",
+					"type": "component"
+				}
+			],
+			"description": "",
+			"rawdescription": "\n",
+			"type": "component",
+			"sourceCode": "import { Component } from '@angular/core'\nimport { CommonModule } from '@angular/common'\nimport { LucideAngularModule } from 'lucide-angular'\n\nimport { RecipeService } from '../../data/use-cases/recipe.use-case'\n\nimport { ButtonComponent } from '../../shared/components/button/button.component'\nimport { CardListComponent } from '../../shared/components/card-list/card-list.component'\nimport { CardComponent } from '../../shared/components/card/card.component'\nimport { LoadingComponent } from '../../shared/components/loading/loading.component'\nimport { InputComponent } from '../../shared/components/input/input.component'\n\nimport type { CardListProps } from '../../shared/components/card-list/card-list.interface'\nimport type { CardProps } from '../../shared/components/card/card.interface'\nimport type { InputProps } from '../../shared/components/input/input.interface'\nimport type { ButtonProps } from '../../shared/components/button/button.interface'\nimport { Recipe } from '../../domain/models/recipe.model'\n\nimport { ITEMS_PER_PAGE } from '../../core/constants/pagination'\n\n@Component({\n\tselector: 'app-home',\n\tstandalone: true,\n\timports: [\n\t\tCommonModule,\n\t\tCardListComponent,\n\t\tCardComponent,\n\t\tInputComponent,\n\t\tButtonComponent,\n\t\tLucideAngularModule,\n\t\tLoadingComponent\n\t],\n\tproviders: [RecipeService],\n\ttemplateUrl: './home.component.html'\n})\nexport class HomeComponent {\n\tpublic searchValue = ''\n\tpublic loading = false\n\tpublic recipes: Recipe[] = []\n\tpublic page = 1\n\n\tpublic cardListProps: CardListProps = {\n\t\titems: []\n\t}\n\n\tpublic cardProps: CardProps = {} as CardProps\n\n\tpublic inputProps: InputProps = {\n\t\tvalue: this.searchValue,\n\t\tplaceholder: 'Search Recipes',\n\t\ttype: 'text'\n\t}\n\n\tpublic buttonProps: ButtonProps = {\n\t\tsize: 'default',\n\t\ttype: 'button',\n\t\tvariant: 'default',\n\t\tclassName: 'rounded-full -translate-x-10'\n\t}\n\n\tconstructor(private readonly recipeService: RecipeService) {}\n\n\tpublic handleSearch(event: Event) {\n\t\tconst value = (event.target as HTMLInputElement).value\n\t\tthis.searchValue = value\n\t}\n\n\tpublic onSearchKeyDown(event: KeyboardEvent) {\n\t\tif (event.key === 'Enter') {\n\t\t\tthis.getRecipes()\n\t\t}\n\t}\n\n\tpublic handleSubmitSearch() {\n\t\tthis.getRecipes()\n\t}\n\n\tprivate paginateRecipes(recipes: Recipe[], results: number) {\n\t\tconst totalPages = Math.ceil(results / ITEMS_PER_PAGE)\n\t\tconst startIndex = (this.page - 1) * ITEMS_PER_PAGE\n\t\tconst endIndex =\n\t\t\tthis.page === totalPages\n\t\t\t\t? startIndex + (this.recipes.length % ITEMS_PER_PAGE)\n\t\t\t\t: startIndex + ITEMS_PER_PAGE\n\n\t\tthis.cardListProps.items = recipes.slice(startIndex, endIndex)\n\t\tconsole.log('this.cardListProps.items: ', this.cardListProps.items)\n\t}\n\n\tprivate getRecipes() {\n\t\tthis.loading = true\n\n\t\tthis.recipeService.getRecipes(this.searchValue).subscribe((data) => {\n\t\t\tthis.paginateRecipes(data.recipes, data.results)\n\n\t\t\tthis.loading = false\n\t\t})\n\t}\n}\n",
+			"assetsDirs": [],
+			"styleUrlsData": "",
+			"stylesData": "",
+			"constructorObj": {
+				"name": "constructor",
+				"description": "",
+				"deprecated": false,
+				"deprecationMessage": "",
+				"args": [
+					{
+						"name": "recipeService",
+						"type": "RecipeService",
+						"deprecated": false,
+						"deprecationMessage": ""
+					}
+				],
+				"line": 59,
+				"jsdoctags": [
+					{
+						"name": "recipeService",
+						"type": "RecipeService",
+						"deprecated": false,
+						"deprecationMessage": "",
+						"tagName": {
+							"text": "param"
+						}
+					}
+				]
+			},
+			"extends": [],
+			"templateData": "<section\n\tclass=\"grid grid-cols-[450px_1fr] min-h-screen\"\n\tstyle=\"grid-template-areas: 'list recipe'\"\n>\n\t<div\n\t\tclass=\"flex flex-col justify-start items-center gap-4 bg-secondary-50 shadow-300 relative\"\n\t\t[ngStyle]=\"{\n\t\t\t'grid-area': 'list'\n\t\t}\"\n\t>\n\t\t<div class=\"flex items-center px-8\">\n\t\t\t<app-input\n\t\t\t\t[props]=\"inputProps\"\n\t\t\t\t(input)=\"handleSearch($event)\"\n\t\t\t\t(keydown)=\"onSearchKeyDown($event)\"\n\t\t\t\tclass=\"py-10\"\n\t\t\t></app-input>\n\n\t\t\t<app-button [props]=\"buttonProps\" (click)=\"handleSubmitSearch()\">\n\t\t\t\t<lucide-icon name=\"search\" size=\"18\"></lucide-icon>\n\t\t\t\tSearch\n\t\t\t</app-button>\n\t\t</div>\n\n\t\t<app-card-list\n\t\t\t*ngIf=\"!this.loading && this.cardListProps.items.length\"\n\t\t\t[props]=\"cardListProps\"\n\t\t\t[className]=\"'w-full'\"\n\t\t></app-card-list>\n\n\t\t<div\n\t\t\t*ngIf=\"!this.loading && !this.cardListProps.items.length\"\n\t\t\tclass=\"py-10 font-bold text-xl\"\n\t\t>\n\t\t\tNo recipes found :(\n\t\t</div>\n\n\t\t<app-loading\n\t\t\t*ngIf=\"this.loading\"\n\t\t\t[props]=\"{ size: 'lg' }\"\n\t\t\t[className]=\"'p-10'\"\n\t\t></app-loading>\n\t</div>\n\n\t<div\n\t\tclass=\"flex items-center justify-center bg-secondary-50\"\n\t\t[ngStyle]=\"{\n\t\t\t'grid-area': 'recipe'\n\t\t}\"\n\t>\n\t\t<ng-container *ngIf=\"this.cardProps.id\">\n\t\t\t<app-card [props]=\"cardProps\"></app-card>\n\n\t\t\t<div class=\"flex flex-col bg-secondary-50 p-12\">\n\t\t\t\t<h2 class=\"font-bold text-xl text-primary-500 -skew-x-6\">\n\t\t\t\t\tMy Shopping List\n\t\t\t\t</h2>\n\t\t\t</div>\n\t\t</ng-container>\n\n\t\t<span\n\t\t\t*ngIf=\"!this.cardProps.id\"\n\t\t\tclass=\"text-xl font-semibold flex justify-center items-center gap-2\"\n\t\t>\n\t\t\t<lucide-icon name=\"pizza\"></lucide-icon>\n\t\t\tSelect some recipe to see how to cook :)\n\t\t</span>\n\t</div>\n</section>\n"
+		},
+		{
+			"name": "InputComponent",
+			"id": "component-InputComponent-d01bfa04469d2732f841bb3a3ce82590fe61ab80e01b2ec2abf71e4d36e312aa307403ed39084623f7d92cdeb236e7911940114515420bb5de55f1ba9a745ff9",
+			"file": "src/app/shared/components/input/input.component.ts",
+			"encapsulation": [],
+			"entryComponents": [],
+			"inputs": [],
+			"outputs": [],
+			"providers": [],
+			"selector": "app-input",
+			"styleUrls": [],
+			"styles": [],
+			"templateUrl": ["./input.component.html"],
+			"viewProviders": [],
+			"hostDirectives": [],
+			"inputsClass": [
+				{
+					"name": "props",
+					"defaultValue": "{} as InputProps",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"line": 12,
+					"type": "InputProps",
+					"decorators": []
+				}
+			],
+			"outputsClass": [],
+			"propertiesClass": [],
+			"methodsClass": [],
+			"deprecated": false,
+			"deprecationMessage": "",
+			"hostBindings": [],
+			"hostListeners": [],
+			"standalone": true,
+			"imports": [],
+			"description": "",
+			"rawdescription": "\n",
+			"type": "component",
+			"sourceCode": "import { Component, Input } from '@angular/core'\n\nimport type { InputProps } from './input.interface'\n\n@Component({\n\tselector: 'app-input',\n\tstandalone: true,\n\timports: [],\n\ttemplateUrl: './input.component.html'\n})\nexport class InputComponent {\n\t@Input() props: InputProps = {} as InputProps\n}\n",
+			"assetsDirs": [],
+			"styleUrlsData": "",
+			"stylesData": "",
+			"extends": [],
+			"templateData": "<input\n\tclass=\"bg-primary-100 rounded-full border border-primary-300 py-2 px-4 text-base text-secondary-900 ring-offset-primary-400 placeholder:text-primary-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 disabled:cursor-not-allowed disabled:opacity-50\"\n\t[value]=\"props.value\"\n\t[type]=\"props.type\"\n\t[placeholder]=\"props.placeholder\"\n/>\n"
+		},
+		{
+			"name": "LoadingComponent",
+			"id": "component-LoadingComponent-f0920dbfa55c2bdd58da29b4354830e9675ef81f95a7e4127caec3220a13b1a51e8555badd2140bf8adc15f74d7fb0462b6d05c9748ef155cf4f49d934404937",
+			"file": "src/app/shared/components/loading/loading.component.ts",
+			"encapsulation": [],
+			"entryComponents": [],
+			"inputs": [],
+			"outputs": [],
+			"providers": [],
+			"selector": "app-loading",
+			"styleUrls": [],
+			"styles": [],
+			"templateUrl": ["./loading.component.html"],
+			"viewProviders": [],
+			"hostDirectives": [],
+			"inputsClass": [
+				{
+					"name": "props",
+					"defaultValue": "{} as LoadingProps",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"line": 15,
+					"type": "LoadingProps",
+					"decorators": []
+				}
+			],
+			"outputsClass": [],
+			"propertiesClass": [],
+			"methodsClass": [],
+			"deprecated": false,
+			"deprecationMessage": "",
+			"hostBindings": [],
+			"hostListeners": [],
+			"standalone": true,
+			"imports": [
+				{
+					"name": "CommonModule",
+					"type": "module"
+				}
+			],
+			"description": "",
+			"rawdescription": "\n",
+			"type": "component",
+			"sourceCode": "import { Component, Input } from '@angular/core'\n\nimport { loadingStyles } from './loading.component.styles'\n\nimport type { LoadingProps } from './loading.interface'\nimport { CommonModule } from '@angular/common'\n\n@Component({\n\tselector: 'app-loading',\n\tstandalone: true,\n\timports: [CommonModule],\n\ttemplateUrl: './loading.component.html'\n})\nexport class LoadingComponent {\n\t@Input() props: LoadingProps = {} as LoadingProps\n\n\tget className() {\n\t\treturn loadingStyles({\n\t\t\tclassName: this.props?.className,\n\t\t\tsize: this.props?.size\n\t\t})\n\t}\n}\n",
+			"assetsDirs": [],
+			"styleUrlsData": "",
+			"stylesData": "",
+			"extends": [],
+			"accessors": {
+				"className": {
+					"name": "className",
+					"getSignature": {
+						"name": "className",
+						"type": "",
+						"returnType": "",
+						"line": 17
+					}
+				}
+			},
+			"templateData": "<div role=\"status\" className=\"flex justify-center\">\n\t<svg\n\t\t[ngClass]=\"className\"\n\t\taria-hidden=\"true\"\n\t\tviewBox=\"0 0 100 101\"\n\t\tfill=\"none\"\n\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t>\n\t\t<path\n\t\t\td=\"M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z\"\n\t\t\tfill=\"currentColor\"\n\t\t/>\n\t\t<path\n\t\t\td=\"M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z\"\n\t\t\tfill=\"currentFill\"\n\t\t/>\n\t</svg>\n</div>\n"
+		},
+		{
+			"name": "PaginationComponent",
+			"id": "component-PaginationComponent-1c1bc3a41fe3ba46d3d7a31bad4fa28f698a50bbb3b5550a149f0da1da20176f79f3ea49290d8ca9db48b1d367bb940ecfaea88de2078637e4c857fd5582aa6d",
+			"file": "src/app/shared/components/pagination/pagination.component.ts",
+			"encapsulation": [],
+			"entryComponents": [],
+			"inputs": [],
+			"outputs": [],
+			"providers": [],
+			"selector": "app-pagination",
+			"styleUrls": [],
+			"styles": [],
+			"templateUrl": ["./pagination.component.html"],
+			"viewProviders": [],
+			"hostDirectives": [],
+			"inputsClass": [
+				{
+					"name": "props",
+					"defaultValue": "{} as PaginationProps",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"line": 15,
+					"type": "PaginationProps",
+					"decorators": []
+				}
+			],
+			"outputsClass": [],
+			"propertiesClass": [],
+			"methodsClass": [],
+			"deprecated": false,
+			"deprecationMessage": "",
+			"hostBindings": [],
+			"hostListeners": [],
+			"standalone": true,
+			"imports": [
+				{
+					"name": "CommonModule",
+					"type": "module"
+				},
+				{
+					"name": "ButtonComponent",
+					"type": "component"
+				}
+			],
+			"description": "",
+			"rawdescription": "\n",
+			"type": "component",
+			"sourceCode": "import { CommonModule } from '@angular/common'\nimport { Component, Input } from '@angular/core'\n\nimport { ButtonComponent } from '../button/button.component'\n\nimport type { PaginationProps } from './pagination.interface'\n\n@Component({\n\tselector: 'app-pagination',\n\tstandalone: true,\n\timports: [CommonModule, ButtonComponent],\n\ttemplateUrl: './pagination.component.html'\n})\nexport class PaginationComponent {\n\t@Input() props: PaginationProps = {} as PaginationProps\n}\n",
+			"assetsDirs": [],
+			"styleUrlsData": "",
+			"stylesData": "",
+			"extends": [],
+			"templateData": "<div>\n\t<app-button>Previous - {{ props.previousPage }}</app-button>\n\t<app-button>Next - {{ props.nextPage }}</app-button>\n</div>\n"
 		}
 	],
 	"modules": [],
@@ -334,7 +1193,7 @@
 				"deprecated": false,
 				"deprecationMessage": "",
 				"type": "ApplicationConfig",
-				"defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    importProvidersFrom(LucideAngularModule.pick({ Clock }))\n  ]\n}"
+				"defaultValue": "{\n\tproviders: [\n\t\tprovideRouter(routes),\n\t\tprovideHttpClient(),\n\t\timportProvidersFrom(\n\t\t\tLucideAngularModule.pick({\n\t\t\t\tClock,\n\t\t\t\tUsersRound,\n\t\t\t\tCirclePlus,\n\t\t\t\tCircleMinus,\n\t\t\t\tCheck,\n\t\t\t\tBookmarkPlus,\n\t\t\t\tBookmarkMinus,\n\t\t\t\tSearch,\n\t\t\t\tPizza\n\t\t\t})\n\t\t)\n\t]\n}"
 			},
 			{
 				"name": "buttonStyles",
@@ -344,17 +1203,70 @@
 				"deprecated": false,
 				"deprecationMessage": "",
 				"type": "",
-				"defaultValue": "tv({\n  base: 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',\n  variants: {\n    variant: {\n      default: 'bg-primary-500 text-white hover:bg-primary-600',\n      destructive: 'bg-destructive text-white hover:bg-red-600',\n      other: 'bg-',\n      outline:\n        'border border-input bg-white hover:bg-accent hover:text-accent-foreground',\n      secondary: 'bg-secondary-500 text-white hover:bg-secondary-600',\n      ghost: 'hover:bg-accent hover:text-accent-foreground',\n      link: 'text-primary underline-offset-4 hover:underline'\n    },\n    size: {\n      default: 'h-10 px-4 py-2',\n      sm: 'h-9 rounded-md px-3',\n      lg: 'h-11 rounded-md px-8',\n      icon: 'h-10 w-10'\n    }\n  },\n  defaultVariants: {\n    variant: 'default',\n    size: 'default'\n  }\n})"
+				"defaultValue": "tv({\n\tbase: 'inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 duration-500 ease-in-out transform hover:scale-110',\n\tvariants: {\n\t\tvariant: {\n\t\t\tdefault: 'bg-primary-500 text-white hover:bg-primary-600',\n\t\t\tdestructive: 'bg-destructive text-white hover:bg-red-600',\n\t\t\tother: 'bg-',\n\t\t\toutline:\n\t\t\t\t'border border-input bg-white hover:bg-accent hover:text-accent-foreground',\n\t\t\tsecondary: 'bg-secondary-500 text-white hover:bg-secondary-600',\n\t\t\tghost: 'hover:bg-accent hover:text-accent-foreground',\n\t\t\tlink: 'text-primary underline-offset-4 hover:underline'\n\t\t},\n\t\tsize: {\n\t\t\tdefault: 'h-10 px-4 py-2',\n\t\t\tsm: 'h-9 rounded-md px-3',\n\t\t\tlg: 'h-11 rounded-md px-8',\n\t\t\ticon: 'h-10 w-10'\n\t\t}\n\t},\n\tdefaultVariants: {\n\t\tvariant: 'default',\n\t\tsize: 'default'\n\t}\n})"
+			},
+			{
+				"name": "ITEMS_PER_PAGE",
+				"ctype": "miscellaneous",
+				"subtype": "variable",
+				"file": "src/app/core/constants/pagination.ts",
+				"deprecated": false,
+				"deprecationMessage": "",
+				"type": "number",
+				"defaultValue": "5"
+			},
+			{
+				"name": "loadingStyles",
+				"ctype": "miscellaneous",
+				"subtype": "variable",
+				"file": "src/app/shared/components/loading/loading.component.styles.ts",
+				"deprecated": false,
+				"deprecationMessage": "",
+				"type": "",
+				"defaultValue": "tv({\n\tbase: 'w-5 h-5 text-gray-200 animate-spin fill-secondary-600',\n\tvariants: {\n\t\tsize: {\n\t\t\tdefault: 'w-5 h-5',\n\t\t\tsm: 'w-4 h-4',\n\t\t\tlg: 'w-6 h-6'\n\t\t}\n\t},\n\tdefaultVariants: {\n\t\tsize: 'default'\n\t}\n})"
 			}
 		],
 		"functions": [],
 		"typealiases": [
+			{
+				"name": "GetRecipesResponse",
+				"ctype": "miscellaneous",
+				"subtype": "typealias",
+				"rawtype": "literal type",
+				"file": "src/app/domain/use-cases/recipe.use-case.ts",
+				"deprecated": false,
+				"deprecationMessage": "",
+				"description": "",
+				"kind": 187
+			},
+			{
+				"name": "Ingredient",
+				"ctype": "miscellaneous",
+				"subtype": "typealias",
+				"rawtype": "literal type",
+				"file": "src/app/shared/components/card/card.interface.ts",
+				"deprecated": false,
+				"deprecationMessage": "",
+				"description": "",
+				"kind": 187
+			},
 			{
 				"name": "Item",
 				"ctype": "miscellaneous",
 				"subtype": "typealias",
 				"rawtype": "literal type",
 				"file": "src/app/shared/components/card-list/card-list.interface.ts",
+				"deprecated": false,
+				"deprecationMessage": "",
+				"description": "",
+				"kind": 187
+			},
+			{
+				"name": "Recipe",
+				"ctype": "miscellaneous",
+				"subtype": "typealias",
+				"rawtype": "literal type",
+				"file": "src/app/domain/models/recipe.model.ts",
 				"deprecated": false,
 				"deprecationMessage": "",
 				"description": "",
@@ -372,7 +1284,7 @@
 					"deprecated": false,
 					"deprecationMessage": "",
 					"type": "ApplicationConfig",
-					"defaultValue": "{\n  providers: [\n    provideRouter(routes),\n    importProvidersFrom(LucideAngularModule.pick({ Clock }))\n  ]\n}"
+					"defaultValue": "{\n\tproviders: [\n\t\tprovideRouter(routes),\n\t\tprovideHttpClient(),\n\t\timportProvidersFrom(\n\t\t\tLucideAngularModule.pick({\n\t\t\t\tClock,\n\t\t\t\tUsersRound,\n\t\t\t\tCirclePlus,\n\t\t\t\tCircleMinus,\n\t\t\t\tCheck,\n\t\t\t\tBookmarkPlus,\n\t\t\t\tBookmarkMinus,\n\t\t\t\tSearch,\n\t\t\t\tPizza\n\t\t\t})\n\t\t)\n\t]\n}"
 				}
 			],
 			"src/app/shared/components/button/button.component.styles.ts": [
@@ -384,13 +1296,63 @@
 					"deprecated": false,
 					"deprecationMessage": "",
 					"type": "",
-					"defaultValue": "tv({\n  base: 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',\n  variants: {\n    variant: {\n      default: 'bg-primary-500 text-white hover:bg-primary-600',\n      destructive: 'bg-destructive text-white hover:bg-red-600',\n      other: 'bg-',\n      outline:\n        'border border-input bg-white hover:bg-accent hover:text-accent-foreground',\n      secondary: 'bg-secondary-500 text-white hover:bg-secondary-600',\n      ghost: 'hover:bg-accent hover:text-accent-foreground',\n      link: 'text-primary underline-offset-4 hover:underline'\n    },\n    size: {\n      default: 'h-10 px-4 py-2',\n      sm: 'h-9 rounded-md px-3',\n      lg: 'h-11 rounded-md px-8',\n      icon: 'h-10 w-10'\n    }\n  },\n  defaultVariants: {\n    variant: 'default',\n    size: 'default'\n  }\n})"
+					"defaultValue": "tv({\n\tbase: 'inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 duration-500 ease-in-out transform hover:scale-110',\n\tvariants: {\n\t\tvariant: {\n\t\t\tdefault: 'bg-primary-500 text-white hover:bg-primary-600',\n\t\t\tdestructive: 'bg-destructive text-white hover:bg-red-600',\n\t\t\tother: 'bg-',\n\t\t\toutline:\n\t\t\t\t'border border-input bg-white hover:bg-accent hover:text-accent-foreground',\n\t\t\tsecondary: 'bg-secondary-500 text-white hover:bg-secondary-600',\n\t\t\tghost: 'hover:bg-accent hover:text-accent-foreground',\n\t\t\tlink: 'text-primary underline-offset-4 hover:underline'\n\t\t},\n\t\tsize: {\n\t\t\tdefault: 'h-10 px-4 py-2',\n\t\t\tsm: 'h-9 rounded-md px-3',\n\t\t\tlg: 'h-11 rounded-md px-8',\n\t\t\ticon: 'h-10 w-10'\n\t\t}\n\t},\n\tdefaultVariants: {\n\t\tvariant: 'default',\n\t\tsize: 'default'\n\t}\n})"
+				}
+			],
+			"src/app/core/constants/pagination.ts": [
+				{
+					"name": "ITEMS_PER_PAGE",
+					"ctype": "miscellaneous",
+					"subtype": "variable",
+					"file": "src/app/core/constants/pagination.ts",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "number",
+					"defaultValue": "5"
+				}
+			],
+			"src/app/shared/components/loading/loading.component.styles.ts": [
+				{
+					"name": "loadingStyles",
+					"ctype": "miscellaneous",
+					"subtype": "variable",
+					"file": "src/app/shared/components/loading/loading.component.styles.ts",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"type": "",
+					"defaultValue": "tv({\n\tbase: 'w-5 h-5 text-gray-200 animate-spin fill-secondary-600',\n\tvariants: {\n\t\tsize: {\n\t\t\tdefault: 'w-5 h-5',\n\t\t\tsm: 'w-4 h-4',\n\t\t\tlg: 'w-6 h-6'\n\t\t}\n\t},\n\tdefaultVariants: {\n\t\tsize: 'default'\n\t}\n})"
 				}
 			]
 		},
 		"groupedFunctions": {},
 		"groupedEnumerations": {},
 		"groupedTypeAliases": {
+			"src/app/domain/use-cases/recipe.use-case.ts": [
+				{
+					"name": "GetRecipesResponse",
+					"ctype": "miscellaneous",
+					"subtype": "typealias",
+					"rawtype": "literal type",
+					"file": "src/app/domain/use-cases/recipe.use-case.ts",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"description": "",
+					"kind": 187
+				}
+			],
+			"src/app/shared/components/card/card.interface.ts": [
+				{
+					"name": "Ingredient",
+					"ctype": "miscellaneous",
+					"subtype": "typealias",
+					"rawtype": "literal type",
+					"file": "src/app/shared/components/card/card.interface.ts",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"description": "",
+					"kind": 187
+				}
+			],
 			"src/app/shared/components/card-list/card-list.interface.ts": [
 				{
 					"name": "Item",
@@ -398,6 +1360,19 @@
 					"subtype": "typealias",
 					"rawtype": "literal type",
 					"file": "src/app/shared/components/card-list/card-list.interface.ts",
+					"deprecated": false,
+					"deprecationMessage": "",
+					"description": "",
+					"kind": 187
+				}
+			],
+			"src/app/domain/models/recipe.model.ts": [
+				{
+					"name": "Recipe",
+					"ctype": "miscellaneous",
+					"subtype": "typealias",
+					"rawtype": "literal type",
+					"file": "src/app/domain/models/recipe.model.ts",
 					"deprecated": false,
 					"deprecationMessage": "",
 					"description": "",
@@ -431,6 +1406,52 @@
 				"status": "low"
 			},
 			{
+				"filePath": "src/app/core/constants/pagination.ts",
+				"type": "variable",
+				"linktype": "miscellaneous",
+				"linksubtype": "variable",
+				"name": "ITEMS_PER_PAGE",
+				"coveragePercent": 0,
+				"coverageCount": "0/1",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/data/use-cases/recipe.use-case.ts",
+				"type": "injectable",
+				"linktype": "injectable",
+				"name": "RecipeService",
+				"coveragePercent": 0,
+				"coverageCount": "0/4",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/domain/use-cases/recipe.use-case.ts",
+				"type": "interface",
+				"linktype": "interface",
+				"name": "IRecipeService",
+				"coveragePercent": 0,
+				"coverageCount": "0/2",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/layout/content/content.component.ts",
+				"type": "component",
+				"linktype": "component",
+				"name": "ContentComponent",
+				"coveragePercent": 0,
+				"coverageCount": "0/1",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/modules/home/home.component.ts",
+				"type": "component",
+				"linktype": "component",
+				"name": "HomeComponent",
+				"coveragePercent": 0,
+				"coverageCount": "0/15",
+				"status": "low"
+			},
+			{
 				"filePath": "src/app/shared/components/button/button.component.styles.ts",
 				"type": "variable",
 				"linktype": "miscellaneous",
@@ -446,7 +1467,7 @@
 				"linktype": "component",
 				"name": "ButtonComponent",
 				"coveragePercent": 0,
-				"coverageCount": "0/4",
+				"coverageCount": "0/2",
 				"status": "low"
 			},
 			{
@@ -473,7 +1494,7 @@
 				"linktype": "interface",
 				"name": "CardListProps",
 				"coveragePercent": 0,
-				"coverageCount": "0/2",
+				"coverageCount": "0/3",
 				"status": "low"
 			},
 			{
@@ -482,7 +1503,16 @@
 				"linktype": "component",
 				"name": "CardComponent",
 				"coveragePercent": 0,
-				"coverageCount": "0/1",
+				"coverageCount": "0/2",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/shared/components/card/card.interface.ts",
+				"type": "interface",
+				"linktype": "interface",
+				"name": "CardProps",
+				"coveragePercent": 0,
+				"coverageCount": "0/9",
 				"status": "low"
 			},
 			{
@@ -491,7 +1521,80 @@
 				"linktype": "component",
 				"name": "HeaderComponent",
 				"coveragePercent": 0,
+				"coverageCount": "0/2",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/shared/components/header/header.interface.ts",
+				"type": "interface",
+				"linktype": "interface",
+				"name": "HeaderProps",
+				"coveragePercent": 0,
+				"coverageCount": "0/3",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/shared/components/input/input.component.ts",
+				"type": "component",
+				"linktype": "component",
+				"name": "InputComponent",
+				"coveragePercent": 0,
+				"coverageCount": "0/2",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/shared/components/input/input.interface.ts",
+				"type": "interface",
+				"linktype": "interface",
+				"name": "InputProps",
+				"coveragePercent": 0,
+				"coverageCount": "0/4",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/shared/components/loading/loading.component.styles.ts",
+				"type": "variable",
+				"linktype": "miscellaneous",
+				"linksubtype": "variable",
+				"name": "loadingStyles",
+				"coveragePercent": 0,
 				"coverageCount": "0/1",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/shared/components/loading/loading.component.ts",
+				"type": "component",
+				"linktype": "component",
+				"name": "LoadingComponent",
+				"coveragePercent": 0,
+				"coverageCount": "0/2",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/shared/components/loading/loading.interface.ts",
+				"type": "interface",
+				"linktype": "interface",
+				"name": "LoadingProps",
+				"coveragePercent": 0,
+				"coverageCount": "0/2",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/shared/components/pagination/pagination.component.ts",
+				"type": "component",
+				"linktype": "component",
+				"name": "PaginationComponent",
+				"coveragePercent": 0,
+				"coverageCount": "0/2",
+				"status": "low"
+			},
+			{
+				"filePath": "src/app/shared/components/pagination/pagination.interface.ts",
+				"type": "interface",
+				"linktype": "interface",
+				"name": "PaginationProps",
+				"coveragePercent": 0,
+				"coverageCount": "0/5",
 				"status": "low"
 			}
 		]

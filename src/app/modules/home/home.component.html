@@ -1,0 +1,76 @@
+<section
+	class="grid grid-cols-[450px_1fr] min-h-screen"
+	style="grid-template-areas: 'list recipe'"
+>
+	<div
+		class="flex flex-col justify-start gap-4 bg-secondary-50 shadow-300 relative py-5"
+		[ngStyle]="{
+			'grid-area': 'list'
+		}"
+	>
+		<div class="flex justify-center items-center">
+			<app-input
+				[props]="inputProps"
+				(input)="handleSearch($event)"
+				(keydown)="onSearchKeyDown($event)"
+				class="py-10"
+			></app-input>
+
+			<app-button [props]="buttonProps" (click)="handleSubmitSearch()">
+				<lucide-icon name="search" size="18"></lucide-icon>
+				Search
+			</app-button>
+		</div>
+
+		<app-card-list
+			*ngIf="!this.loading && this.cardListProps.items.length"
+			[props]="cardListProps"
+			[className]="'w-full'"
+		></app-card-list>
+
+		<div class="flex justify-center items-center">
+			<div
+				*ngIf="!this.loading && !this.cardListProps.items.length"
+				class="py-10 font-bold text-xl"
+			>
+				No recipes found :(
+			</div>
+
+			<app-loading
+				*ngIf="this.loading"
+				[props]="{ size: 'lg' }"
+				[className]="'p-10'"
+			></app-loading>
+		</div>
+
+		<app-pagination
+			[props]="paginationProps"
+			class="mt-auto px-6"
+		></app-pagination>
+	</div>
+
+	<div
+		class="flex items-center justify-center bg-secondary-50"
+		[ngStyle]="{
+			'grid-area': 'recipe'
+		}"
+	>
+		<ng-container *ngIf="this.cardProps.id">
+			<app-card [props]="cardProps"></app-card>
+
+			<div class="flex flex-col bg-secondary-50 p-12">
+				<h2 class="font-bold text-xl text-primary-500 -skew-x-6">
+					My Shopping List
+				</h2>
+			</div>
+		</ng-container>
+
+		<span
+			*ngIf="!this.cardProps.id"
+			class="text-xl font-semibold flex justify-center items-center gap-2"
+		>
+			<lucide-icon name="pizza"></lucide-icon>
+			Select some recipe to see how to cook :)
+		</span>
+	</div>
+</section>

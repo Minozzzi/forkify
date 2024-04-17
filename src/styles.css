@@ -23,7 +23,7 @@ body {
 html,
 body {
 	min-height: 100vh;
-	@apply bg-gradient-to-br from-secondary-500 to-primary-500 h-full min-h-dvh;
+	@apply bg-gradient-to-br from-secondary-500 to-primary-500 bg-no-repeat bg-cover min-h-dvh;
 }
 
 ol,

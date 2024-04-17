@@ -7,13 +7,16 @@
 	"
 >
 	<app-header
-		[props]="{ className: 'rounded-t-lg', logo: '/assets/forkify-logo.png' }"
+		[props]="{
+			className: 'rounded-t-lg',
+			logo: '/assets/forkify-logo.png'
+		}"
 		[ngStyle]="{
 			'grid-area': 'header'
 		}"
 	></app-header>
 
-	<section class="flex" style="grid-area: 'content'">
+	<section style="grid-area: 'content'">
 		<router-outlet></router-outlet>
 	</section>
 </main>
