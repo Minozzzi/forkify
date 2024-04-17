@@ -1,0 +1,19 @@
+<div class="flex items-center justify-between w-full">
+	<app-button
+		(click)="props.onClickPreviousPage()"
+		[props]="{
+			className: 'font-semibold',
+			disabled: !props.hasPreviousPage
+		}"
+		><lucide-icon name="chevron-left"></lucide-icon> Page
+		{{ props.previousPage }}</app-button
+	>
+	<app-button
+		(click)="props.onClickNextPage()"
+		[props]="{
+			className: 'font-semibold',
+			disabled: !props.hasNextPage
+		}"
+		>Page {{ props.nextPage }} <lucide-icon name="chevron-right"></lucide-icon
+	></app-button>
+</div>
