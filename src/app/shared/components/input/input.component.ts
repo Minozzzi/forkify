@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core'
 
-import { InputProps } from './input.interface'
+import type { InputProps } from './input.interface'
 
 @Component({
 	selector: 'app-input',

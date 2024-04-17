@@ -1,0 +1,19 @@
+<main
+	class="grid my-20 mx-auto max-h-max max-w-screen-xl overflow-hidden grid-cols-1 grid-rows-[80px_1fr]"
+	style="
+		grid-template-areas:
+			'header'
+			'content';
+	"
+>
+	<app-header
+		class="rounded-t-lg"
+		[ngStyle]="{
+			'grid-area': 'header'
+		}"
+	></app-header>
+
+	<section class="flex" style="grid-area: 'content'">
+		<router-outlet></router-outlet>
+	</section>
+</main>

@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common'
 import { Component, Input } from '@angular/core'
 import { LucideAngularModule } from 'lucide-angular'
-import { CardProps } from './card.interface'
+
+import type { CardProps } from './card.interface'
 
 @Component({
 	selector: 'app-card',

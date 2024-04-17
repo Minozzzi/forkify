@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common'
 import { Component, Input } from '@angular/core'
-import { HeaderProps } from './header.interface'
+
+import type { HeaderProps } from './header.interface'
 
 @Component({
 	selector: 'app-header',
