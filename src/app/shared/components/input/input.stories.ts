@@ -15,11 +15,7 @@ export const Primary: Story = {
 		props: {
 			value: '',
 			placeholder: 'My Input',
-			type: 'text',
-			onChange: (event: Event) => {
-				const value = (event.target as HTMLInputElement).value
-				console.log('value: ', value)
-			}
+			type: 'text'
 		}
 	}
 }
