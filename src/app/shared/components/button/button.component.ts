@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common'
-import { Component, EventEmitter, Input, Output } from '@angular/core'
+import { Component, Input } from '@angular/core'
 
-import { ButtonProps } from './button.interface'
 import { buttonStyles } from './button.component.styles'
+
+import type { ButtonProps } from './button.interface'
 
 @Component({
 	selector: 'app-button',
@@ -11,21 +12,13 @@ import { buttonStyles } from './button.component.styles'
 	templateUrl: './button.component.html'
 })
 export class ButtonComponent {
-	@Input()
-	buttonProps?: ButtonProps
-
-	@Output()
-	handleOnClick = new EventEmitter<Event>()
+	@Input() props: ButtonProps = {} as ButtonProps
 
 	get className() {
 		return buttonStyles({
-			className: this.buttonProps?.class,
-			size: this.buttonProps?.size,
-			variant: this.buttonProps?.variant
+			className: this.props?.className,
+			size: this.props?.size,
+			variant: this.props?.variant
 		})
-	}
-
-	onClick() {
-		this.handleOnClick.emit()
 	}
 }

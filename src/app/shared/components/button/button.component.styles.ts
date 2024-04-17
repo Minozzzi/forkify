@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants'
 
 export const buttonStyles = tv({
-	base: 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',
+	base: 'inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 duration-500 ease-in-out transform hover:scale-110',
 	variants: {
 		variant: {
 			default: 'bg-primary-500 text-white hover:bg-primary-600',
