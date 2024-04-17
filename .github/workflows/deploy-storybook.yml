@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'src/app/shared/components/**'
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -39,7 +37,7 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install
 
       - name: Build 🔧
         run: |
