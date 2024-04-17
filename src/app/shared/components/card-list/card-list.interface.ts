@@ -1,6 +1,7 @@
 type Item = {
-	imageUrl: string
+	id: string
 	title: string
+	imageUrl: string
 	publisher: string
 }
 

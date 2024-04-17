@@ -5,6 +5,7 @@ type Ingredient = {
 }
 
 export interface CardProps {
+	id: string
 	image: {
 		url: string
 		alt: string
