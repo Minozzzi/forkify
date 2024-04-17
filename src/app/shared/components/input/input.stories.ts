@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular'
 import { InputComponent } from './input.component'
+import { InputProps } from './input.interface'
 
 const meta: Meta<InputComponent> = {
 	title: 'Components/Input',
@@ -10,4 +11,10 @@ const meta: Meta<InputComponent> = {
 export default meta
 type Story = StoryObj<InputComponent>
 
-export const Primary: Story = {}
+export const Primary: Story = {
+	args: {
+		props: {
+			placeholder: 'MyInput'
+		} as InputProps
+	}
+}

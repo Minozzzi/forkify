@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common'
 import { Component, Input } from '@angular/core'
-import { CardListProps } from './card-list.interface'
+
+import type { CardListProps } from './card-list.interface'
 
 @Component({
 	selector: 'app-card-list',
@@ -9,5 +10,5 @@ import { CardListProps } from './card-list.interface'
 	templateUrl: './card-list.component.html'
 })
 export class CardListComponent {
-	@Input() cardListProps?: CardListProps
+	@Input() props: CardListProps = {} as CardListProps
 }

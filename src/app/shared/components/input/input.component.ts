@@ -9,5 +9,5 @@ import { InputProps } from './input.interface'
 	templateUrl: './input.component.html'
 })
 export class InputComponent {
-	@Input() inputProps!: InputProps
+	@Input() props!: InputProps
 }

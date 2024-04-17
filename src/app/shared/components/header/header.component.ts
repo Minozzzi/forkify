@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common'
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core'
+import { HeaderProps } from './header.interface'
 
 @Component({
 	selector: 'app-header',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core'
 	imports: [CommonModule],
 	templateUrl: './header.component.html'
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+	@Input() props: HeaderProps = {
+		logo: '/assets/forkify-logo.png'
+	} as HeaderProps
+}

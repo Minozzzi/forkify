@@ -4,6 +4,6 @@ type Item = {
 	publisher: string
 }
 
-export interface CardListProps {
+export interface CardListProps extends HTMLDivElement {
 	items: Item[]
 }

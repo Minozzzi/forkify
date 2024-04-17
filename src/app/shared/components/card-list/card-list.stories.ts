@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular'
 import { CardListComponent } from './card-list.component'
+import { CardListProps } from './card-list.interface'
 
 const meta: Meta<CardListComponent> = {
 	title: 'Components/CardList',
@@ -12,7 +13,7 @@ type Story = StoryObj<CardListComponent>
 
 export const Primary: Story = {
 	args: {
-		cardListProps: {
+		props: {
 			items: [
 				{
 					publisher: '101 Cookbooks',
@@ -32,6 +33,6 @@ export const Primary: Story = {
 						'http://forkify-api.herokuapp.com/images/Pizza2BDip2B12B500c4c0a26c.jpg'
 				}
 			]
-		}
+		} as CardListProps
 	}
 }

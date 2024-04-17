@@ -10,5 +10,5 @@ import { CardProps } from './card.interface'
 	templateUrl: './card.component.html'
 })
 export class CardComponent {
-	@Input() cardProps!: CardProps
+	@Input() props: CardProps = {} as CardProps
 }

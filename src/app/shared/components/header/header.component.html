@@ -1,3 +1,6 @@
-<header class="flex justify-start items-center p-5 shadow-100 bg-secondary-100">
-	<img class="max-w-40" src="/src/assets/forkify-logo.png" alt="Forkify Logo" />
+<header
+	class="flex justify-start items-center p-5 shadow-100 bg-secondary-100 h-20"
+	[ngClass]="props.className"
+>
+	<img class="max-w-40" [src]="props.logo" alt="Forkify Logo" />
 </header>
