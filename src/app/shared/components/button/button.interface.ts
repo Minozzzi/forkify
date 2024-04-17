@@ -4,5 +4,5 @@ import { buttonStyles } from './button.component.styles'
 export interface ButtonProps extends VariantProps<typeof buttonStyles> {
 	type?: 'button' | 'submit'
 	disabled?: boolean
-	class?: string
+	className?: string
 }

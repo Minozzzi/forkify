@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular'
 import { InputComponent } from './input.component'
-import { InputProps } from './input.interface'
 
 const meta: Meta<InputComponent> = {
 	title: 'Components/Input',
@@ -14,7 +13,13 @@ type Story = StoryObj<InputComponent>
 export const Primary: Story = {
 	args: {
 		props: {
-			placeholder: 'MyInput'
-		} as InputProps
+			value: '',
+			placeholder: 'My Input',
+			type: 'text',
+			onChange: (event: Event) => {
+				const value = (event.target as HTMLInputElement).value
+				console.log('value: ', value)
+			}
+		}
 	}
 }

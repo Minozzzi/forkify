@@ -12,5 +12,5 @@ import type { HeaderProps } from './header.interface'
 export class HeaderComponent {
 	@Input() props: HeaderProps = {
 		logo: '/assets/forkify-logo.png'
-	} as HeaderProps
+	}
 }

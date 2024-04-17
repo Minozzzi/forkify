@@ -7,7 +7,7 @@
 	"
 >
 	<app-header
-		class="rounded-t-lg"
+		[props]="{ className: 'rounded-t-lg', logo: '/assets/forkify-logo.png' }"
 		[ngStyle]="{
 			'grid-area': 'header'
 		}"

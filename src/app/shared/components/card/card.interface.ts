@@ -4,7 +4,7 @@ type Ingredient = {
 	description: string
 }
 
-export interface CardProps extends HTMLDivElement {
+export interface CardProps {
 	image: {
 		url: string
 		alt: string
@@ -14,4 +14,6 @@ export interface CardProps extends HTMLDivElement {
 	servings: string
 	subTitle: string
 	ingredients: Ingredient[]
+
+	className?: string
 }

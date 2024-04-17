@@ -1,3 +1,4 @@
-export interface HeaderProps extends HTMLDivElement {
+export interface HeaderProps {
 	logo?: string
+	className?: string
 }
