@@ -44,15 +44,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build 🔧
-        run: |
-          pnpm build-storybook
+      # - name: Build 🔧
+      #   run: |
+      #     pnpm build-storybook
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.6.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: main
-          FOLDER: storybook-static
-          TARGET_FOLDER: docs-storybook
-          CLEAN: true
+      # - name: Deploy 🚀
+      #   uses: JamesIves/github-pages-deploy-action@v4.6.0
+      #   with:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     BRANCH: main
+      #     FOLDER: storybook-static
+      #     TARGET_FOLDER: docs-storybook
+      #     CLEAN: true
