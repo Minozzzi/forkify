@@ -55,3 +55,4 @@ jobs:
           BRANCH: main
           FOLDER: storybook-static
           TARGET_FOLDER: docs-storybook
+          CLEAN: true
