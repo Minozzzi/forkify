@@ -23,21 +23,21 @@
 		</div>
 
 		<app-card-list
-			*ngIf="!this.loading && this.cardListProps.items.length"
+			*ngIf="!loadingRecipes && cardListProps.items.length"
 			[props]="cardListProps"
 			[className]="'w-full'"
 		></app-card-list>
 
 		<div class="flex justify-center items-center">
 			<div
-				*ngIf="!this.loading && !this.cardListProps.items.length"
+				*ngIf="!loadingRecipes && !cardListProps.items.length"
 				class="py-10 font-bold text-xl"
 			>
 				No recipes found :(
 			</div>
 
 			<app-loading
-				*ngIf="this.loading"
+				*ngIf="loadingRecipes"
 				[props]="{ size: 'lg' }"
 				[className]="'p-10'"
 			></app-loading>
@@ -49,28 +49,99 @@
 		></app-pagination>
 	</div>
 
-	<div
-		class="flex items-center justify-center bg-secondary-50"
-		[ngStyle]="{
-			'grid-area': 'recipe'
-		}"
-	>
-		<ng-container *ngIf="this.cardProps.id">
+	<ng-container>
+		<div
+			*ngIf="cardProps.id && !loadingRecipe"
+			class="flex bg-secondary-50"
+			[ngStyle]="{
+				'grid-area': 'recipe'
+			}"
+		>
 			<app-card [props]="cardProps"></app-card>
 
-			<div class="flex flex-col bg-secondary-50 p-12">
-				<h2 class="font-bold text-xl text-primary-500 -skew-x-6">
+			<div class="flex flex-col bg-secondary-50 p-12 gap-8">
+				<h2 class="font-bold text-xl text-primary-500 -skew-y-3">
 					My Shopping List
 				</h2>
-			</div>
-		</ng-container>
 
-		<span
-			*ngIf="!this.cardProps.id"
-			class="text-xl font-semibold flex justify-center items-center gap-2"
+				<div class="flex flex-col gap-6 w-full">
+					<app-input
+						[props]="{
+							value: ingredientValue,
+							type: 'text',
+							placeholder: 'Ingredient'
+						}"
+						(input)="handleChangeIngredient('name', $event)"
+					></app-input>
+					<app-input
+						[props]="{
+							value: quantityValue,
+							type: 'text',
+							placeholder: 'Quantity'
+						}"
+						(input)="handleChangeIngredient('quantity', $event)"
+					></app-input>
+					<app-input
+						[props]="{
+							value: unitValue,
+							type: 'text',
+							placeholder: 'Unit'
+						}"
+						(input)="handleChangeIngredient('unit', $event)"
+					></app-input>
+
+					<app-button (click)="addIngredient()">Add</app-button>
+				</div>
+
+				<ul *ngIf="ingredients.length" class="bg-secondary-200 p-4">
+					<li *ngFor="let ingredient of ingredients">
+						{{ ingredient.name }} - {{ ingredient.quantity }}
+						{{ ingredient.unit }}
+					</li>
+				</ul>
+
+				<div class="flex items-center gap-3">
+					<app-input
+						[props]="{
+							value: whatsAppNumber,
+							type: 'text',
+							placeholder: 'Your WhatsApp number'
+						}"
+						(input)="handleChangeWppNumber($event)"
+					></app-input>
+
+					<app-button
+						[props]="{
+							disabled: !whatsAppNumber.trim()
+						}"
+						(click)="sendIngredientsList()"
+						>Send List</app-button
+					>
+				</div>
+			</div>
+		</div>
+
+		<div
+			*ngIf="!cardProps.id"
+			class="flex justify-center items-center bg-secondary-50"
+			[ngStyle]="{
+				'grid-area': 'recipe'
+			}"
 		>
-			<lucide-icon name="pizza"></lucide-icon>
-			Select some recipe to see how to cook :)
-		</span>
-	</div>
+			<span
+				*ngIf="!loadingRecipe"
+				class="text-xl font-semibold flex justify-center items-center gap-2"
+			>
+				<lucide-icon name="pizza"></lucide-icon>
+				Select some recipe to see how to cook :)
+			</span>
+
+			<app-loading
+				*ngIf="loadingRecipe"
+				[props]="{
+					size: 'lg'
+				}"
+			></app-loading>
+		</div>
+	</ng-container>
 </section>

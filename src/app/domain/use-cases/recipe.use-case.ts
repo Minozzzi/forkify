@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs'
-import { RecipeModel } from '../models/recipe.model'
+import { RecipeDetailModel, RecipeModel } from '../models/recipe.model'
 
 export type GetRecipesResponse = {
 	recipes: RecipeModel[]
@@ -8,4 +8,5 @@ export type GetRecipesResponse = {
 
 export interface IRecipeService {
 	getRecipes: (searchValue: string) => Observable<GetRecipesResponse>
+	getRecipe: (id: string) => Observable<RecipeDetailModel>
 }

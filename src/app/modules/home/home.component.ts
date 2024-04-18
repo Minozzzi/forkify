@@ -4,7 +4,7 @@ import { LucideAngularModule } from 'lucide-angular'
 
 import { ITEMS_PER_PAGE } from '../../core/constants/pagination'
 
-import { RecipeModel } from '../../domain/models/recipe.model'
+import type { RecipeModel } from '../../domain/models/recipe.model'
 
 import { RecipeService } from '../../data/use-cases/recipe.use-case'
 
@@ -39,10 +39,18 @@ import type { PaginationProps } from '../../shared/components/pagination/paginat
 })
 export class HomeComponent {
 	public searchValue = ''
-	public loading = false
+	public loadingRecipes = false
+	public loadingRecipe = false
 	public recipes: RecipeModel[] = []
 	public totalPages: number = 0
 	public page = 1
+
+	public ingredients: { name: string; quantity: string; unit: string }[] = []
+	public quantityValue = ''
+	public unitValue = ''
+	public ingredientValue = ''
+
+	public whatsAppNumber = ''
 
 	public cardListProps: CardListProps = {
 		items: []
@@ -69,12 +77,13 @@ export class HomeComponent {
 		previousPage: 1,
 		nextPage: 2,
 		onClickPreviousPage: () => {
-			if (this.page === 1) return
+			if (this.page === 1 || !this.cardListProps.items.length) return
 			this.page -= 1
 			this.paginateRecipes(this.recipes, this.totalPages)
 		},
 		onClickNextPage: () => {
-			if (this.totalPages === this.page) return
+			if (this.totalPages === this.page || !this.cardListProps.items.length)
+				return
 			this.page += 1
 			this.paginateRecipes(this.recipes, this.totalPages)
 		}
@@ -97,6 +106,64 @@ export class HomeComponent {
 		this.getRecipes()
 	}
 
+	public handleChangeIngredient(
+		key: 'name' | 'quantity' | 'unit',
+		event: Event
+	) {
+		const value = (event.target as HTMLInputElement).value
+
+		switch (key) {
+			case 'name':
+				this.ingredientValue = value
+				break
+			case 'quantity':
+				this.quantityValue = value
+				break
+			case 'unit':
+				this.unitValue = value
+				break
+			default:
+				break
+		}
+	}
+
+	public handleChangeWppNumber(event: Event) {
+		const value = (event.target as HTMLInputElement).value
+		this.whatsAppNumber = value
+	}
+
+	public addIngredient() {
+		this.ingredients = [
+			...this.ingredients,
+			{
+				quantity: this.quantityValue,
+				name: this.ingredientValue,
+				unit: this.unitValue
+			}
+		]
+		console.log('this.ingredients: ', this.ingredients)
+
+		this.quantityValue = ''
+		this.ingredientValue = ''
+		this.unitValue = ''
+	}
+
+	public sendIngredientsList() {
+		if (!this.whatsAppNumber) {
+			alert('Please add your WhatsApp number')
+			return
+		}
+
+		const message = this.ingredients
+			.map(
+				(ingredient) =>
+					`- ${ingredient.name} - ${ingredient.quantity} ${ingredient.unit}`
+			)
+			.join('\n')
+		const url = `https://wa.me/${this.whatsAppNumber}?text=${message}`
+		window.open(url, '_blank')
+	}
+
 	private paginateRecipes(recipes: RecipeModel[], totalPages: number) {
 		const startIndex = (this.page - 1) * ITEMS_PER_PAGE
 		const endIndex =
@@ -104,7 +171,15 @@ export class HomeComponent {
 				? startIndex + (this.recipes.length % ITEMS_PER_PAGE)
 				: startIndex + ITEMS_PER_PAGE
 
-		this.cardListProps.items = recipes.slice(startIndex, endIndex)
+		this.cardListProps.items = recipes
+			.slice(startIndex, endIndex)
+			.map((recipe) => ({
+				...recipe,
+				isSelected: recipe.id === this.cardProps.id,
+				onClick: (id) => {
+					this.getRecipe(id)
+				}
+			}))
 
 		this.updatePaginationProps()
 	}
@@ -117,14 +192,44 @@ export class HomeComponent {
 	}
 
 	private getRecipes() {
-		this.loading = true
+		this.loadingRecipes = true
 
 		this.recipeService.getRecipes(this.searchValue).subscribe((data) => {
 			this.recipes = data.recipes
 			this.totalPages = Math.ceil(data.results / ITEMS_PER_PAGE)
 			this.paginateRecipes(data.recipes, this.totalPages)
 
-			this.loading = false
+			this.loadingRecipes = false
 		})
+	}
+
+	private getRecipe(id: string) {
+		this.loadingRecipe = true
+
+		this.recipeService
+			.getRecipe(id)
+			.subscribe(
+				({
+					id,
+					cookingTime,
+					image,
+					ingredients,
+					servings,
+					subTitle,
+					title
+				}) => {
+					this.cardProps = {
+						...this.cardProps,
+						id,
+						cookingTime,
+						image,
+						ingredients,
+						servings,
+						subTitle,
+						title
+					}
+					this.loadingRecipe = false
+				}
+			)
 	}
 }

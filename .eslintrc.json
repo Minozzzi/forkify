@@ -10,6 +10,7 @@
 	],
 	"plugins": ["prettier"],
 	"rules": {
+		"@angular-eslint/template/click-events-have-key-events": ["error"],
 		"prettier/prettier": "error",
 		"@angular-eslint/directive-selector": [
 			"error",

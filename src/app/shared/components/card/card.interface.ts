@@ -1,5 +1,5 @@
 type Ingredient = {
-	quantity: string | null
+	quantity: number | null
 	unit: string | null
 	description: string
 }
@@ -11,8 +11,8 @@ export interface CardProps {
 		alt: string
 	}
 	title: string
-	cookingTime: string
-	servings: string
+	cookingTime: number
+	servings: number
 	subTitle: string
 	ingredients: Ingredient[]
 

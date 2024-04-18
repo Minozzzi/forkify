@@ -6,7 +6,10 @@ import {
 	IRecipeService
 } from '../../domain/use-cases/recipe.use-case'
 import { map } from 'rxjs'
-import { RecipeModel } from '../../domain/models/recipe.model'
+import type {
+	RecipeDetailModel,
+	RecipeModel
+} from '../../domain/models/recipe.model'
 
 @Injectable({
 	providedIn: 'root'
@@ -34,6 +37,27 @@ export class RecipeService implements IRecipeService {
 						results: response.results ?? 0
 					}) as GetRecipesResponse
 			)
+		)
+	}
+
+	getRecipe: IRecipeService['getRecipe'] = (id) => {
+		return this.httpClient.get(`${this.url}/${id}`).pipe(
+			map((response: any) => {
+				const { recipe } = response.data
+
+				return {
+					id: recipe.id,
+					cookingTime: recipe.cooking_time,
+					image: {
+						url: recipe.image_url,
+						alt: 'Recipe image'
+					},
+					servings: recipe.servings,
+					title: recipe.title,
+					subTitle: 'Recipe Ingredients',
+					ingredients: recipe.ingredients
+				} as RecipeDetailModel
+			})
 		)
 	}
 }

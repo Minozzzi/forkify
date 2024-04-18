@@ -1,6 +1,6 @@
-<section class="flex flex-col w-full" [ngClass]="props.className">
+<section [ngClass]="props.className" class="flex flex-col">
 	<figure
-		class="flex flex-col items-center relative before:content-normal before:w-full before:h-full before:absolute before:top-0 before:left-0 before:bg-gradient-to-br before:from-primary-500 before:to-secondary-500 before:opacity-30"
+		class="flex flex-col items-center relative before:content-normal before:w-full before:h-full before:absolute before:top-0 before:left-0 before:bg-gradient-to-br before:from-primary-500 before:to-secondary-500 before:opacity-30 h-80"
 	>
 		<div
 			class="absolute right-0 rounded-bl-lg bg-gradient-to-br from-primary-500 to-secondary-500 p-4 cursor-pointer"
@@ -33,18 +33,20 @@
 					name="circle-minus"
 					class="text-primary-500 cursor-pointer"
 					size="20"
+					(click)="onUpdateServings('minus')"
 				></lucide-icon>
 
 				<lucide-icon
 					name="circle-plus"
 					class="text-primary-500 cursor-pointer"
 					size="20"
+					(click)="onUpdateServings('plus')"
 				></lucide-icon>
 			</div>
 		</div>
 	</div>
 
-	<div class="flex flex-col items-center bg-primary-50 py-8 px-6">
+	<div class="flex flex-col items-center bg-primary-50 py-8 px-6 flex-grow">
 		<h2 class="text-xl font-bold text-primary-400 mb-6">
 			{{ props.subTitle }}
 		</h2>
@@ -52,11 +54,12 @@
 		<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
 			<div
 				*ngFor="let ingredient of props?.ingredients"
-				class="flex items-center text-center gap-2"
+				class="flex text-center gap-2"
 			>
 				<lucide-icon name="check"></lucide-icon>
 				<p>
-					{{ ingredient.quantity ?? '' }} {{ ingredient.unit ?? '' }}
+					{{ getIngredientQuantity(ingredient.quantity) }}
+					{{ ingredient.unit ?? '' }}
 					{{ ingredient.description }}
 				</p>
 			</div>
